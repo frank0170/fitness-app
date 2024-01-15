@@ -1,0 +1,11 @@
+{
+  "expo": {
+    "name": "fitness-app-prod",
+    "slug": "fitness-app-prod",
+    "version": "1.0.0",
+    "assetBundlePatterns": [
+      "**/*"
+    ]
+  },
+  "name": "fitness-app-prod"
+}
