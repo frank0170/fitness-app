@@ -1,5 +1,8 @@
 import { Text, View } from "react-native";
 import HomeView from "./HomeView";
+import chestImage from "../../public/chest.png";
+import backImage from "../../public/back.png";
+import shouldersImage from "../../public/shoulders.png";
 
 const HomeContainer = () => {
   const person = {
@@ -15,7 +18,30 @@ const HomeContainer = () => {
     ],
   };
 
-  return <HomeView person={person} />;
+  const sampleData = {
+    cards: [
+      {
+        image: chestImage,
+        title: "Massive Upper Body",
+        category: "Chest & Shoulders",
+        link: "blank",
+      },
+      {
+        image: backImage,
+        title: "Back Workout",
+        category: "Back & Lats",
+        link: "blank",
+      },
+      {
+        image: shouldersImage,
+        title: "Shoulder Workout",
+        category: "Shoulders",
+        link: "blank",
+      },
+    ],
+  };
+
+  return <HomeView person={person} sampleData={sampleData} />;
 };
 
 export default HomeContainer;

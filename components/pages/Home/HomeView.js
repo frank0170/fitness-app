@@ -1,7 +1,8 @@
 import { Text, View } from "react-native";
 import HomePart1 from "./HomePart1";
+import HomePart2 from "./HomePart2";
 
-const HomeView = ({ person }) => {
+const HomeView = ({ person, sampleData }) => {
   return (
     <View
       style={{
@@ -10,6 +11,7 @@ const HomeView = ({ person }) => {
       }}
     >
       <HomePart1 person={person} />
+      <HomePart2 person={person} sampleData={sampleData} />
     </View>
   );
 };

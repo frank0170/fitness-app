@@ -15,13 +15,18 @@ const HomePart1 = ({ person }) => {
 
   useEffect(() => {
     if (currentHour >= 5 && currentHour < 12) {
-      setWelcomePart("Good morning");
+      setWelcomePart("Good Morning");
     } else if (currentHour >= 12 && currentHour < 18) {
-      setWelcomePart("Good day");
+      setWelcomePart("Good Day");
     } else {
-      setWelcomePart("Good evening");
+      setWelcomePart("Good Evening");
     }
   }, []);
+
+  const handleIsActive = (day) => {
+    const currentDay = formattedDate.slice(0, 3);
+    return day === currentDay;
+  };
 
   return (
     <View
@@ -48,13 +53,22 @@ const HomePart1 = ({ person }) => {
         <View
           style={{
             display: "flex",
+            justifyContent: "space-between",
             flexDirection: "row",
-            alignItems: "center",
-            marginBottom: "12px",
           }}
         >
-          <CaloriesIcon />
-          <Text style={homeStyles.home_1.caloriesTitle}> Calories</Text>
+          <View
+            style={{
+              display: "flex",
+              flexDirection: "row",
+              alignItems: "center",
+              marginBottom: "12px",
+            }}
+          >
+            <CaloriesIcon />
+            <Text style={homeStyles.home_1.caloriesTitle}> Calories</Text>
+          </View>
+          <Text style={homeStyles.home_1.caloriesDates}> Week</Text>
         </View>
         <View
           style={{
@@ -66,7 +80,13 @@ const HomePart1 = ({ person }) => {
           {person.daysOfWeek.map((day) => {
             return (
               <View>
-                <CaloriesDaysStat size={day.size} />
+                <View style={{ display: "flex", justifyContent: "flex-end" }}>
+                  {handleIsActive(day.name) ? (
+                    <CaloriesDaysStat size={day.size} isActive={true} />
+                  ) : (
+                    <CaloriesDaysStat size={day.size} isActive={false} />
+                  )}
+                </View>
                 <Text style={homeStyles.home_1.caloriesDates}>{day.name}</Text>
               </View>
             );
