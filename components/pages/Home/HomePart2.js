@@ -8,9 +8,16 @@ import CaloriesDaysStat from "../../icons/caloriesDaysStat.js";
 import { Dimensions, PixelRatio } from "react-native";
 import chestImage from "../../public/chest.png";
 
-const FitnessCard = ({ image, title, category, link }) => {
+const FitnessCard = ({ image, title, category, link, all }) => {
   return (
-    <ImageBackground source={image} style={homeStyles.home_2.imageCard.card}>
+    <ImageBackground
+      source={image}
+      style={
+        all
+          ? homeStyles.home_2.imageCard.cardAll
+          : homeStyles.home_2.imageCard.card
+      }
+    >
       <View style={{ padding: "20px" }}>
         <View style={{ display: "flex", width: "126px", flexWrap: "wrap" }}>
           <Text style={homeStyles.home_2.imageCard.title}> {title}</Text>
@@ -68,6 +75,7 @@ const HomePart2 = ({ person, sampleData }) => {
                 image={item.image}
                 title={item.title}
                 category={item.category}
+                all={true}
               />
             );
           })
@@ -76,6 +84,7 @@ const HomePart2 = ({ person, sampleData }) => {
             image={sampleData.cards[0].image}
             title={sampleData.cards[0].title}
             category={sampleData.cards[0].category}
+            all={false}
           />
         )}
       </View>

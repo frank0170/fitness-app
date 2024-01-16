@@ -45,6 +45,14 @@ export const homeStyles = StyleSheet.create({
         border: "1px solid #37383C",
         overflow: "hidden",
       },
+      cardAll: {
+        width: "100%",
+        marginRight: "24px",
+        height: 166,
+        borderRadius: 12,
+        border: "1px solid #37383C",
+        overflow: "hidden",
+      },
       title: {
         color: "#FFF",
         fontSize: 20,
