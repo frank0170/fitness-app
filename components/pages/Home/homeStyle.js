@@ -37,6 +37,23 @@ export const homeStyles = StyleSheet.create({
     },
   },
   home_2: {
+    workoutsStyle: {
+      seeAllOff: {
+        marginTop: 24,
+        backgroundColor: "#111214",
+        marginLeft: "24px",
+        gap: 16,
+      },
+
+      seeAllOn: {
+        marginTop: 24,
+        backgroundColor: "#111214",
+        marginLeft: "24px",
+        marginRight: "24px",
+        gap: 16,
+      },
+    },
+
     imageCard: {
       card: {
         width: 303,
@@ -44,13 +61,16 @@ export const homeStyles = StyleSheet.create({
         borderRadius: 12,
         border: "1px solid #37383C",
         overflow: "hidden",
+        marginRight: 12,
       },
       cardAll: {
         width: "100%",
-        marginRight: "24px",
-        height: 166,
+        marginBottom: 12,
+        paddingRight: 24,
+        height: 186,
         borderRadius: 12,
-        border: "1px solid #37383C",
+        borderWidth: 1,
+        borderColor: "#37383C",
         overflow: "hidden",
       },
       title: {
@@ -82,7 +102,7 @@ export const homeStyles = StyleSheet.create({
         background: "#FF8036",
       },
     },
-    seeAll: {
+    seeAllTextOff: {
       color: "#FF8036",
       fontSize: "12px",
       fontStyle: "normal",
@@ -90,6 +110,61 @@ export const homeStyles = StyleSheet.create({
       lineHeight: 20,
       letterSpacing: 0.3,
       marginRight: "24px",
+    },
+    seeAllTextOn: {
+      color: "#FF8036",
+      fontSize: "12px",
+      fontStyle: "normal",
+      fontWeight: 400,
+      lineHeight: 20,
+      letterSpacing: 0.3,
+    },
+  },
+  home_3: {
+    categoryCard: {
+      selected: {
+        display: "flex",
+        width: "72.75px",
+        height: "36px",
+        padding: "8px 16px",
+        justifyContent: "center",
+        alignItems: "center",
+        gap: "12px",
+        marginRight: "12px",
+        borderRadius: "8px",
+        border: "1px solid #374151",
+        backgroundColor: "#FFF",
+      },
+      selectedText: {
+        color: "#111827",
+      },
+      notSelected: {
+        display: "flex",
+        width: "72.75px",
+        height: "36px",
+        padding: "8px 16px",
+        justifyContent: "center",
+        alignItems: "center",
+        gap: "12px",
+        borderRadius: "8px",
+        marginRight: "12px",
+        color: "red",
+        border: "1px solid #374151",
+        background: "#24262B",
+      },
+      notSelectedText: {
+        color: "#6B7280",
+      },
+    },
+    workoutCard: {
+      card: {
+        width: 154,
+        height: 190,
+        borderRadius: 12,
+        border: "1px solid #37383C",
+        overflow: "hidden",
+        marginRight: 12,
+      },
     },
   },
 });

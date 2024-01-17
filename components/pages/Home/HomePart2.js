@@ -1,5 +1,12 @@
 import React, { useState, useEffect } from "react";
-import { Text, View, TouchableOpacity, ImageBackground } from "react-native";
+import {
+  Text,
+  View,
+  TouchableOpacity,
+  ImageBackground,
+  ScrollView,
+  StyleSheet,
+} from "react-native";
 import { format } from "date-fns";
 import "./homeStyle.js";
 import { homeStyles } from "./homeStyle.js";
@@ -9,18 +16,15 @@ import { Dimensions, PixelRatio } from "react-native";
 import chestImage from "../../public/chest.png";
 
 const FitnessCard = ({ image, title, category, link, all }) => {
+  const cardStyle = all
+    ? homeStyles.home_2.imageCard.card
+    : homeStyles.home_2.imageCard.cardAll;
+
   return (
-    <ImageBackground
-      source={image}
-      style={
-        all
-          ? homeStyles.home_2.imageCard.cardAll
-          : homeStyles.home_2.imageCard.card
-      }
-    >
-      <View style={{ padding: "20px" }}>
-        <View style={{ display: "flex", width: "126px", flexWrap: "wrap" }}>
-          <Text style={homeStyles.home_2.imageCard.title}> {title}</Text>
+    <ImageBackground source={image} style={cardStyle}>
+      <View style={{ padding: 20 }}>
+        <View style={{ flexDirection: "row", flexWrap: "wrap" }}>
+          <Text style={homeStyles.home_2.imageCard.title}>{title}</Text>
         </View>
         <Text style={homeStyles.home_2.imageCard.category}>{category}</Text>
         <TouchableOpacity style={homeStyles.home_2.imageCard.button}>
@@ -32,21 +36,41 @@ const FitnessCard = ({ image, title, category, link, all }) => {
 };
 
 const HomePart2 = ({ person, sampleData }) => {
+  const styles = StyleSheet.create({
+    container: {
+      flex: 1,
+      marginTop: 20,
+    },
+    row: {
+      flex: 1,
+      justifyContent: "center",
+      alignItems: "center",
+      width: 100, // Adjust the width as needed
+      height: 200, // Adjust the height as needed
+      margin: 10,
+      backgroundColor: "lightblue",
+    },
+    text: {
+      fontSize: 18,
+      fontWeight: "bold",
+    },
+  });
+
   const [seeAllTrue, setSeeAllTrue] = useState(false);
 
   const handleSeeAllClick = () => {
     setSeeAllTrue(!seeAllTrue);
   };
-  return (
-    <View
-      style={{
-        marginTop: 24,
-        backgroundColor: "#111214",
-        marginLeft: "24px",
 
-        gap: 16,
-      }}
-    >
+  const workoutsStyle = seeAllTrue
+    ? homeStyles.home_2.workoutsStyle.seeAllOn
+    : homeStyles.home_2.workoutsStyle.seeAllOff;
+
+  const seeAllTextStyle = seeAllTrue
+    ? homeStyles.home_2.seeAllTextOn
+    : homeStyles.home_2.seeAllTextOff;
+  return (
+    <View style={workoutsStyle}>
       <View
         style={{
           display: "flex",
@@ -57,37 +81,24 @@ const HomePart2 = ({ person, sampleData }) => {
       >
         <Text style={homeStyles.home_1.welcome}>Recommended workouts</Text>
         <TouchableOpacity onPress={handleSeeAllClick}>
-          <Text style={homeStyles.home_2.seeAll}>See all</Text>
+          <Text style={seeAllTextStyle}>See all</Text>
         </TouchableOpacity>{" "}
       </View>
-      <View
-        style={{
-          display: "flex",
-          flexDirection: "column",
-          justifyContent: "space-around",
-          gap: "12px",
-        }}
+      <ScrollView
+        horizontal={!seeAllTrue}
+        showsHorizontalScrollIndicator={false}
+        showsVerticalScrollIndicator={false}
       >
-        {seeAllTrue ? (
-          sampleData.cards.map((item) => {
-            return (
-              <FitnessCard
-                image={item.image}
-                title={item.title}
-                category={item.category}
-                all={true}
-              />
-            );
-          })
-        ) : (
+        {sampleData.cards.map((item) => (
           <FitnessCard
-            image={sampleData.cards[0].image}
-            title={sampleData.cards[0].title}
-            category={sampleData.cards[0].category}
-            all={false}
+            key={item.id} // Don't forget to add a unique key prop for each item
+            image={item.image}
+            title={item.title}
+            category={item.category}
+            all={!seeAllTrue}
           />
-        )}
-      </View>
+        ))}
+      </ScrollView>
     </View>
   );
 };
