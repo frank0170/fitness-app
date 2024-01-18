@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from "react";
+import React, { useState } from "react";
 import {
   Text,
   View,
@@ -7,13 +7,8 @@ import {
   ScrollView,
   StyleSheet,
 } from "react-native";
-import { format } from "date-fns";
 import "./homeStyle.js";
 import { homeStyles } from "./homeStyle.js";
-import CaloriesIcon from "../../icons/caloriesIcon.js";
-import CaloriesDaysStat from "../../icons/caloriesDaysStat.js";
-import { Dimensions, PixelRatio } from "react-native";
-import chestImage from "../../public/chest.png";
 import CaloriesIconSmall from "../../icons/caloriesIconSmall.js";
 import TimeSmallIcon from "../../icons/timeSmallIcon.js";
 
@@ -59,10 +54,6 @@ const CategoryCard = ({ category, selectedCategory, setSelectedCategory }) => {
     selectedCategory === category
       ? homeStyles.home_3.categoryCard.selectedText
       : homeStyles.home_3.categoryCard.notSelectedText;
-
-  console.log("selectedCategory:", selectedCategory);
-  console.log("category:", category);
-  console.log("textStyle:", textStyle);
 
   return (
     <TouchableOpacity

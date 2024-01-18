@@ -7,13 +7,8 @@ import {
   ScrollView,
   StyleSheet,
 } from "react-native";
-import { format } from "date-fns";
 import "./homeStyle.js";
 import { homeStyles } from "./homeStyle.js";
-import CaloriesIcon from "../../icons/caloriesIcon.js";
-import CaloriesDaysStat from "../../icons/caloriesDaysStat.js";
-import { Dimensions, PixelRatio } from "react-native";
-import chestImage from "../../public/chest.png";
 
 const FitnessCard = ({ image, title, category, link, all }) => {
   const cardStyle = all

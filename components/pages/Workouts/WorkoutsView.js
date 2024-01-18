@@ -1,4 +1,3 @@
-import { Text, View } from "react-native";
 import { ScrollView } from "react-native-gesture-handler";
 import WorkoutsMainPage from "./WorkoutsMainPage";
 

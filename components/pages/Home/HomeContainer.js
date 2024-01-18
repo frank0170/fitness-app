@@ -1,7 +1,5 @@
-import { Text, View } from "react-native";
 import HomeView from "./HomeView";
 
-//sample data
 import chestImage from "../../public/chest.png";
 import backImage from "../../public/back.png";
 import shouldersImage from "../../public/shoulders.png";

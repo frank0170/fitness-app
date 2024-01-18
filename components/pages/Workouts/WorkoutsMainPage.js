@@ -4,6 +4,8 @@ import { workoutsStyle } from "./workoutsStyle.js";
 import WorkoutsGrid from "../../common/workoutsGrid.js";
 
 const WorkoutsMainPage = () => {
+  const [selectedItemsArray, setSelectedItemsArray] = useState([]);
+
   return (
     <View
       style={{
@@ -20,7 +22,10 @@ const WorkoutsMainPage = () => {
         You can select only one muscle group.
       </Text>
 
-      <WorkoutsGrid />
+      <WorkoutsGrid
+        multipleSelection={false}
+        {...{ selectedItemsArray, setSelectedItemsArray }}
+      />
     </View>
   );
 };

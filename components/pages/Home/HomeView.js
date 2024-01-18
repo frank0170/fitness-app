@@ -1,4 +1,3 @@
-import { Text, View } from "react-native";
 import HomePart1 from "./HomePart1";
 import HomePart2 from "./HomePart2";
 import HomePart3 from "./HomePart3";
