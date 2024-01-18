@@ -14,13 +14,15 @@ import CaloriesIcon from "../../icons/caloriesIcon.js";
 import CaloriesDaysStat from "../../icons/caloriesDaysStat.js";
 import { Dimensions, PixelRatio } from "react-native";
 import chestImage from "../../public/chest.png";
+import CaloriesIconSmall from "../../icons/caloriesIconSmall.js";
+import TimeSmallIcon from "../../icons/timeSmallIcon.js";
 
-const WorkoutCard = ({ image, title, category, link, all }) => {
+const WorkoutCard = ({ image, name, kcal, time }) => {
   const cardStyle = homeStyles.home_3.workoutCard.card;
 
   return (
     <ImageBackground source={image} style={cardStyle}>
-      <View style={{ padding: 20, alignItems: "flex-end" }}>
+      <View style={{ padding: 20 }}>
         <View
           style={{
             flexDirection: "row",
@@ -28,9 +30,20 @@ const WorkoutCard = ({ image, title, category, link, all }) => {
             alignItems: "flex-end",
           }}
         >
-          <Text style={homeStyles.home_2.imageCard.title}>{title}</Text>
+          <Text style={homeStyles.home_3.workoutCard.title}>{name}</Text>
         </View>
-        <Text style={homeStyles.home_2.imageCard.category}>{category}</Text>
+        <View style={homeStyles.home_3.workoutCard.secondaryTextPart}>
+          <View style={homeStyles.home_3.workoutCard.secondaryTextPartDiv}>
+            <Text style={homeStyles.home_3.workoutCard.secondaryTextPartText}>
+              <CaloriesIconSmall /> {kcal} kcal
+            </Text>
+          </View>
+          <View style={homeStyles.home_3.workoutCard.secondaryTextPartDiv}>
+            <Text style={homeStyles.home_3.workoutCard.secondaryTextPartText}>
+              <TimeSmallIcon /> {time} min
+            </Text>
+          </View>
+        </View>
       </View>
     </ImageBackground>
   );
@@ -116,8 +129,9 @@ const HomePart2 = ({ person, sampleData }) => {
           <WorkoutCard
             key={item.id} // Don't forget to add a unique key prop for each item
             image={item.image}
-            title={item.name}
-            category={item.category}
+            name={item.name}
+            kcal={item.kcal}
+            time={item.time}
           />
         ))}
       </ScrollView>
