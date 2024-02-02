@@ -1,7 +1,9 @@
 import { ScrollView } from "react-native-gesture-handler";
 import WorkoutsMainPage from "./WorkoutsMainPage";
+import WorkoutsExerciseList from "./WorkoutsExerciseList";
+import WorkoutExerciseTab from "./WorkoutExerciseTab";
 
-const WorkoutsView = () => {
+const WorkoutsView = ({ person, exercisesList }) => {
   return (
     <ScrollView
       style={{
@@ -11,7 +13,11 @@ const WorkoutsView = () => {
       showsHorizontalScrollIndicator={false}
       showsVerticalScrollIndicator={false}
     >
-      <WorkoutsMainPage />
+      {/* <WorkoutsMainPage /> */}
+      <WorkoutsExerciseList person={person} exercisesList={exercisesList} />
+      {/* <WorkoutExerciseTab exercisesList={exercisesList} /> */}
+
+      {/* Cand termini cu Exercise List, ii dai comment out, cum ii MainPage si scoti din comment pe WorkoutExerciseTab */}
     </ScrollView>
   );
 };
