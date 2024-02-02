@@ -50,8 +50,9 @@ export default function App() {
           inactiveTintColor: "#6B7280",
         }}
       >
-        <Tab.Screen name="Home" component={Home} />
         <Tab.Screen name="Workouts" component={Workouts} />
+        {/* pus pt development */}
+        <Tab.Screen name="Home" component={Home} />
         <Tab.Screen name="Randomizer" component={Randomizer} />
         <Tab.Screen name="Profile" component={Profile} />
       </Tab.Navigator>
