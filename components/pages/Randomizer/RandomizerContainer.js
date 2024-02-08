@@ -1,11 +1,8 @@
 import { Text, View } from "react-native";
+import RandomizerView from "./RandomizerView";
 
 const Randomizer = () => {
-  return (
-    <View style={{ flex: 1, justifyContent: "center", alignItems: "center" }}>
-      <Text>Randomizer!</Text>
-    </View>
-  );
+  return <RandomizerView />;
 };
 
 export default Randomizer;

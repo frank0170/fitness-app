@@ -29,7 +29,16 @@ const WorkoutItem = ({
 
   return (
     <TouchableOpacity style={cardStyle} onPress={onPress}>
-      {isSelected ? iconActive : icon}
+      {/* <View
+        style={{
+          alignItems: "center",
+          justifyContent: "center",
+          height: 44,
+          width: 44,
+        }}
+      >
+        {isSelected ? iconActive : icon}
+      </View> */}
       <Text style={workoutsStyle.cardText}>{text}</Text>
     </TouchableOpacity>
   );

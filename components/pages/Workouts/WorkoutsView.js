@@ -14,10 +14,11 @@ const WorkoutsView = ({ person, exercisesList }) => {
       showsHorizontalScrollIndicator={false}
       showsVerticalScrollIndicator={false}
     >
-      {/* <WorkoutsMainPage /> */}
-      {/* //<WorkoutsExerciseList person={person} exercisesList={exercisesList} /> */}
+      <WorkoutsMainPage />
+
+      {/* <WorkoutsExerciseList person={person} exercisesList={exercisesList} /> */}
       {/* <WorkoutExerciseTab exercisesList={exercisesList} /> */}
-      <ExercisePreview exercise={exercisesList[0]}/>
+      {/* <ExercisePreview exercise={exercisesList[0]}/> */}
       {/* Cand termini cu Exercise List, ii dai comment out, cum ii MainPage si scoti din comment pe WorkoutExerciseTab */}
     </ScrollView>
   );

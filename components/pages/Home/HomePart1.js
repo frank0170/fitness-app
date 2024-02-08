@@ -5,6 +5,7 @@ import "./homeStyle.js";
 import { homeStyles } from "./homeStyle.js";
 import CaloriesIcon from "../../icons/caloriesIcon.js";
 import CaloriesDaysStat from "../../icons/caloriesDaysStat.js";
+import { ScrollView } from "react-native-gesture-handler";
 
 const HomePart1 = ({ person }) => {
   const [welcomePart, setWelcomePart] = useState();
@@ -32,8 +33,8 @@ const HomePart1 = ({ person }) => {
     <View
       style={{
         backgroundColor: "#111214",
-        marginLeft: "24px",
-        marginTop: "9px",
+        marginLeft: 24,
+        marginTop: 9,
       }}
     >
       <Text style={homeStyles.home_1.date}>{formattedDate}</Text>
@@ -43,11 +44,12 @@ const HomePart1 = ({ person }) => {
       <View
         style={{
           backgroundColor: "#24262b",
-          borderRadius: "12px",
-          border: "1px solid #37383C",
-          marginTop: "25px",
-          marginRight: "24px",
-          padding: "14px",
+          borderRadius: 12,
+          borderWidth: 1,
+          borderColor: "#37383C",
+          marginTop: 25,
+          marginRight: 24,
+          padding: 14,
         }}
       >
         <View
@@ -62,7 +64,7 @@ const HomePart1 = ({ person }) => {
               display: "flex",
               flexDirection: "row",
               alignItems: "center",
-              marginBottom: "12px",
+              marginBottom: 12,
             }}
           >
             <CaloriesIcon />

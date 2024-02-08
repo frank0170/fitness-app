@@ -1,22 +1,19 @@
-import React from "react";
-
-const CaloriesIconSmall = () => {
-  return (
-    <svg
-      width="12"
-      height="12"
-      viewBox="0 0 12 12"
-      fill="none"
-      xmlns="http://www.w3.org/2000/svg"
-    >
-      <path
-        d="M6 6C7 4.52 6 2.5 5.5 2C5.5 3.519 4.6135 4.3705 4 5C3.387 5.63 3 6.62 3 7.5C3 8.29565 3.31607 9.05871 3.87868 9.62132C4.44129 10.1839 5.20435 10.5 6 10.5C6.79565 10.5 7.55871 10.1839 8.12132 9.62132C8.68393 9.05871 9 8.29565 9 7.5C9 6.734 8.472 5.53 8 5C7.107 6.5 6.6045 6.5 6 6Z"
-        stroke="white"
-        stroke-linecap="round"
-        stroke-linejoin="round"
-      />
-    </svg>
-  );
-};
-
-export default CaloriesIconSmall;
+import * as React from "react";
+import Svg, { Path } from "react-native-svg";
+const SvgComponent = (props) => (
+  <Svg
+    xmlns="http://www.w3.org/2000/svg"
+    width={12}
+    height={12}
+    fill="none"
+    {...props}
+  >
+    <Path
+      stroke="#fff"
+      strokeLinecap="round"
+      strokeLinejoin="round"
+      d="M6 6c1-1.48 0-3.5-.5-4 0 1.519-.886 2.37-1.5 3-.613.63-1 1.62-1 2.5a3 3 0 1 0 6 0c0-.766-.528-1.97-1-2.5-.893 1.5-1.396 1.5-2 1Z"
+    />
+  </Svg>
+);
+export default SvgComponent;

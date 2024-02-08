@@ -94,7 +94,7 @@ const HomePart2 = ({ person, sampleData }) => {
         <Text style={homeStyles.home_1.welcome}>Choose your workout</Text>
         <TouchableOpacity>
           <Text style={seeAllTextStyle}>Select type</Text>
-        </TouchableOpacity>{" "}
+        </TouchableOpacity>
       </View>
       <ScrollView
         horizontal={true}

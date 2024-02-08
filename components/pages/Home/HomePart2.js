@@ -22,7 +22,7 @@ const FitnessCard = ({ image, title, category, link, all }) => {
           <Text style={homeStyles.home_2.imageCard.title}>{title}</Text>
         </View>
         <Text style={homeStyles.home_2.imageCard.category}>{category}</Text>
-        
+
         <TouchableOpacity style={homeStyles.home_2.imageCard.button}>
           <Text style={{ color: "#fff" }}>Start</Text>
         </TouchableOpacity>
@@ -78,7 +78,7 @@ const HomePart2 = ({ person, sampleData }) => {
         <Text style={homeStyles.home_1.welcome}>Recommended workouts</Text>
         <TouchableOpacity onPress={handleSeeAllClick}>
           <Text style={seeAllTextStyle}>See all</Text>
-        </TouchableOpacity>{" "}
+        </TouchableOpacity>
       </View>
       <ScrollView
         horizontal={!seeAllTrue}

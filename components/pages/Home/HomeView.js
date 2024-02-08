@@ -9,6 +9,7 @@ const HomeView = ({ person, sampleData }) => {
       style={{
         flex: 1,
         backgroundColor: "#111214",
+        paddingTop: 60,
       }}
       showsHorizontalScrollIndicator={false}
       showsVerticalScrollIndicator={false}
