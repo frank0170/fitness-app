@@ -1,5 +1,5 @@
 import React from "react";
-import { View, Text, TouchableOpacity } from "react-native";
+import { View, Text, TouchableOpacity, Button } from "react-native";
 import { workoutsStyle } from "./workoutsStyle.js";
 import {
   ChestIcon,
@@ -48,6 +48,7 @@ const WorkoutsGrid = ({
   multipleSelection,
   selectedItemsArray,
   setSelectedItemsArray,
+  navigation,
 }) => {
   const isActive = selectedItemsArray;
 
@@ -155,6 +156,13 @@ const WorkoutsGrid = ({
           selected={isActive}
         />
       </View>
+
+      {selectedItemsArray.length > 0 && (
+        <Button
+          title="Go to Exercises"
+          onPress={() => navigation.navigate("ExerciseList")}
+        />
+      )}
     </View>
   );
 };

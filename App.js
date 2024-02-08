@@ -2,13 +2,14 @@ import { Text, View } from "react-native";
 import { MaterialCommunityIcons } from "@expo/vector-icons";
 import { NavigationContainer } from "@react-navigation/native";
 import { createBottomTabNavigator } from "@react-navigation/bottom-tabs";
+import "./App.css";
 
 import { GestureHandlerRootView } from "react-native-gesture-handler";
 
 import Home from "./components/pages/Home/HomeContainer";
 import HomeIcon from "./components/icons/homeIcon";
 
-import Workouts from "./components/pages/Workouts/WorkoutsContainer";
+import Workouts from "./components/pages/Workouts/WorkoutsNavigation";
 import WorkoutsIcon from "./components/icons/workoutsIcon";
 
 import Profile from "./components/pages/Profile/ProfileContainer";
