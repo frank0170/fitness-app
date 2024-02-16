@@ -4,6 +4,7 @@ import { NavigationContainer } from "@react-navigation/native";
 import { createBottomTabNavigator } from "@react-navigation/bottom-tabs";
 import { ExerciseProvider } from "./components/context/exerciseContext";
 import { CategoryProvider } from "./components/context/categoryContext";
+import { AuthProvider } from "./components/context/loginContext";
 import "./App.css";
 
 import { GestureHandlerRootView } from "react-native-gesture-handler";
@@ -67,11 +68,13 @@ const AppNavigation = () => {
 export default function App() {
   return (
     <GestureHandlerRootView style={{ flex: 1 }}>
-      <CategoryProvider>
-        <ExerciseProvider>
-          <AppNavigation />
-        </ExerciseProvider>
-      </CategoryProvider>
+      <AuthProvider>
+        <CategoryProvider>
+          <ExerciseProvider>
+            <AppNavigation />
+          </ExerciseProvider>
+        </CategoryProvider>
+      </AuthProvider>
     </GestureHandlerRootView>
   );
 }
