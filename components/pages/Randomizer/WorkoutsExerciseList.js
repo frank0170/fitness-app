@@ -9,6 +9,7 @@ import back from "../../public/back.png";
 import chest from "../../public/chest.png";
 
 import { useExerciseContext } from "../../context/exerciseContext";
+import { useCategoryContext } from "../../context/categoryContext";
 
 // exercise ii un object ce are {
 //     image: ...
@@ -46,6 +47,10 @@ const exercise = [
 
 const WorkoutCard = ({ exercise, navigation }) => {
   const { exerciseData, setExerciseData } = useExerciseContext();
+
+  const { categoryData, setCategoryData } = useCategoryContext();
+
+  console.log("category", categoryData);
 
   const handleExercise = (exercise) => {
     setExerciseData(exercise);

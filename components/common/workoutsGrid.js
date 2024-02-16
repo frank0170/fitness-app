@@ -11,6 +11,7 @@ import {
   StretchingIcon,
   AbsIcon,
 } from "../icons/workoutGridIcons.js";
+import { useCategoryContext } from "../context/categoryContext.js";
 
 const WorkoutItem = ({
   icon,
@@ -52,6 +53,8 @@ const WorkoutsGrid = ({
 }) => {
   const isActive = selectedItemsArray;
 
+  const { categoryData, setCategoryData } = useCategoryContext();
+
   const handleActive = (item) => {
     if (multipleSelection) {
       setSelectedItemsArray((prevItems) => {
@@ -70,6 +73,11 @@ const WorkoutsGrid = ({
         }
       });
     }
+  };
+
+  const handleExerciseList = () => {
+    setCategoryData(selectedItemsArray);
+    navigation.navigate("ExerciseList");
   };
 
   return (
@@ -167,7 +175,7 @@ const WorkoutsGrid = ({
         {selectedItemsArray.length > 0 && (
           <TouchableOpacity
             style={workoutsStyle.startButton}
-            onPress={() => navigation.navigate("ExerciseList")}
+            onPress={handleExerciseList}
           >
             <Text style={{ color: "white" }}>Start Exercise</Text>
           </TouchableOpacity>

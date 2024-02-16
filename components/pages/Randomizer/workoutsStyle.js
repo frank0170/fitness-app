@@ -20,11 +20,13 @@ export const workoutsStyle = StyleSheet.create({
     letterSpacing: "-0.048px",
     color: "#D7D8D9",
     width: 300,
+    marginTop: 12,
+    marginBottom: 37,
   },
 
-  text: {
-    textAlign: "left",
-    left: "24px",
+  text:{
+    textAlign:"left",
+    left:"24px",
     fontSize: 20,
     fontStyle: "normal",
     fontWeight: 600,
@@ -67,21 +69,21 @@ export const workoutsStyle = StyleSheet.create({
     marginTop: 11,
   },
   card_image: {
-    borderRadius: 8,
-    width: 80,
+    borderRadius : 8,
+    width:80,
     height: 80,
   },
   playButton: {
-    backgroundColor: "#FF8036",
-    alignSelf: "center",
+    backgroundColor: '#FF8036',
+    alignSelf : "center",
     padding: 8,
-    left: -10,
-    marginLeft: "auto",
-    width: 38,
+    left : -10,
+    marginLeft : "auto",
+    width : 38,
     height: 38,
     borderRadius: 11,
   },
-  exCard: {
+  exCard:{
     width: 105,
     height: 55,
     borderRadius: 14,
@@ -92,7 +94,7 @@ export const workoutsStyle = StyleSheet.create({
     justifyContent: "center",
     alignItems: "center",
   },
-  exText1: {
+  exText1:{
     textAlign: "justify",
     fontSize: 16,
     fontStyle: "normal",
@@ -102,7 +104,7 @@ export const workoutsStyle = StyleSheet.create({
     color: "#9EA0A5",
     marginTop: 12,
   },
-  exText2: {
+  exText2:{
     textAlign: "justify",
     fontSize: 16,
     fontStyle: "normal",
@@ -112,7 +114,7 @@ export const workoutsStyle = StyleSheet.create({
     color: "#FFF",
     marginTop: 6,
   },
-  exText3: {
+  exText3:{
     textAlign: "justify",
     fontSize: 16,
     fontStyle: "normal",
