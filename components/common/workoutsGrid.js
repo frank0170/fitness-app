@@ -157,12 +157,22 @@ const WorkoutsGrid = ({
         />
       </View>
 
-      {selectedItemsArray.length > 0 && (
-        <Button
-          title="Go to Exercises"
-          onPress={() => navigation.navigate("ExerciseList")}
-        />
-      )}
+      <View
+        style={{
+          display: "flex",
+          flexDirection: "column",
+          justifyContent: "center",
+        }}
+      >
+        {selectedItemsArray.length > 0 && (
+          <TouchableOpacity
+            style={workoutsStyle.startButton}
+            onPress={() => navigation.navigate("ExerciseList")}
+          >
+            <Text style={{ color: "white" }}>Start Exercise</Text>
+          </TouchableOpacity>
+        )}
+      </View>
     </View>
   );
 };
