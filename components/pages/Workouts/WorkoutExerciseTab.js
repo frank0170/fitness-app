@@ -20,7 +20,6 @@ const WorkoutExerciseTab = ({ exercisesList }) => {
         <TouchableOpacity>
           <View>
             <Text> Start Workout</Text>
-            {/* svg */}
           </View>
         </TouchableOpacity>
       </View>

@@ -77,7 +77,7 @@ const WorkoutCard = ({ exercise, navigation }) => {
             style={{ height: 16, width: 16, marginTop: 6 }}
             source={timeClock}
           />
-          <Text style={workoutsStyle.exText3}> {exercise.time} sec</Text>
+          <Text style={workoutsStyle.exText3}>{exercise.time} sec</Text>
         </View>
       </View>
 

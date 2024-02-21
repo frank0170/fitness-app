@@ -5,7 +5,7 @@ import { createBottomTabNavigator } from "@react-navigation/bottom-tabs";
 import { ExerciseProvider } from "./components/context/exerciseContext";
 import { CategoryProvider } from "./components/context/categoryContext";
 import { AuthProvider } from "./components/context/loginContext";
-import "./App.css";
+// import "./App.css";
 
 import { GestureHandlerRootView } from "react-native-gesture-handler";
 
