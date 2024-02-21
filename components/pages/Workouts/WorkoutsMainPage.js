@@ -21,6 +21,7 @@ const WorkoutsMainPage = ({ navigation }) => {
           flexDirection: "column",
           alignItems: "center",
           margin: 16,
+          paddingTop: 60,
         }}
       >
         <Text style={workoutsStyle.title}>

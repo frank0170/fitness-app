@@ -30,16 +30,14 @@ const WorkoutItem = ({
 
   return (
     <TouchableOpacity style={cardStyle} onPress={onPress}>
-      {/* <View
+      <View
         style={{
           alignItems: "center",
           justifyContent: "center",
-          height: 44,
-          width: 44,
         }}
       >
         {isSelected ? iconActive : icon}
-      </View> */}
+      </View>
       <Text style={workoutsStyle.cardText}>{text}</Text>
     </TouchableOpacity>
   );
@@ -167,9 +165,10 @@ const WorkoutsGrid = ({
 
       <View
         style={{
-          display: "flex",
+          paddingTop: 52, // Take up all available space
           flexDirection: "column",
-          justifyContent: "center",
+          justifyContent: "center", // Center children vertically in the container
+          alignItems: "center", // Center children horizontally in the container
         }}
       >
         {selectedItemsArray.length > 0 && (
@@ -177,7 +176,7 @@ const WorkoutsGrid = ({
             style={workoutsStyle.startButton}
             onPress={handleExerciseList}
           >
-            <Text style={{ color: "white" }}>Start Exercise</Text>
+            <Text style={{ color: "white" }}>See available workouts</Text>
           </TouchableOpacity>
         )}
       </View>

@@ -83,6 +83,16 @@ export const workoutsStyle = StyleSheet.create({
     height: 38,
     borderRadius: 11,
   },
+  previewButton: {
+    backgroundColor: "rgba(255, 255, 255, 0.2)",
+
+    // Makes the container fill the entire screen or its parent container
+    justifyContent: "center", // Centers children vertically in the container
+    alignItems: "center",
+    width: 72,
+    height: 72,
+    borderRadius: 1000,
+  },
   exCard: {
     width: 105,
     height: 55,

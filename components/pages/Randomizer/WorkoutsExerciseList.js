@@ -7,9 +7,9 @@ import { workoutsStyle } from "./workoutsStyle.js";
 import { ImageBackground } from "react-native-web";
 import back from "../../public/back.png";
 import chest from "../../public/chest.png";
+import PlayButton from "../../icons/playButton";
 
 import { useExerciseContext } from "../../context/exerciseContext";
-import { useCategoryContext } from "../../context/categoryContext";
 
 // exercise ii un object ce are {
 //     image: ...
@@ -48,10 +48,6 @@ const exercise = [
 const WorkoutCard = ({ exercise, navigation }) => {
   const { exerciseData, setExerciseData } = useExerciseContext();
 
-  const { categoryData, setCategoryData } = useCategoryContext();
-
-  console.log("category", categoryData);
-
   const handleExercise = (exercise) => {
     setExerciseData(exercise);
     navigation.navigate("ExercisePreview");
@@ -60,13 +56,14 @@ const WorkoutCard = ({ exercise, navigation }) => {
     <View
       style={{
         backgroundColor: "#24262b",
-        borderRadius: "12px",
-        border: "1px solid #37383C",
-        marginTop: "24px",
-        height: "108px",
-        marginRight: "24px",
-        marginLeft: "24px",
-        padding: "14px",
+        borderRadius: 12,
+        borderWidth: 1,
+        borderColor: "#37383C",
+        marginTop: 24,
+        height: 108,
+        marginRight: 24,
+        marginLeft: 24,
+        padding: 14,
         flexDirection: "row",
       }}
     >
@@ -74,15 +71,15 @@ const WorkoutCard = ({ exercise, navigation }) => {
         <Image style={workoutsStyle.card_image} source={exercise.image} />
       </View>
 
-      <View style={{ marginLeft: "24px", top: "-10px" }}>
+      <View style={{ marginLeft: 24, top: -10 }}>
         <Text style={workoutsStyle.exText1}> {exercise.status}</Text>
         <Text style={workoutsStyle.exText2}> {exercise.name} </Text>
         <View style={{ flexDirection: "row", alignItems: "center" }}>
           <Image
-            style={{ height: 16, width: 16, marginTop: 6 }}
+            style={{ height: 16, width: 16, marginTop: 6, marginRight: 4 }}
             source={timeClock}
           />
-          <Text style={workoutsStyle.exText3}> {exercise.time} sec</Text>
+          <Text style={workoutsStyle.exText3}>{exercise.time} sec</Text>
         </View>
       </View>
 
@@ -90,7 +87,7 @@ const WorkoutCard = ({ exercise, navigation }) => {
         style={workoutsStyle.playButton}
         onPress={() => handleExercise(exercise)}
       >
-        <Image source={playButton} />
+        <PlayButton />
       </TouchableOpacity>
     </View>
   );
@@ -144,7 +141,6 @@ const WorkoutsExerciseList = ({ navigation }) => {
         backgroundColor: "#111214",
       }}
     >
-      {" "}
       <HomePart1 person={person} />
       <View>
         <Text style={workoutsStyle.text}>Your selected type exercises</Text>

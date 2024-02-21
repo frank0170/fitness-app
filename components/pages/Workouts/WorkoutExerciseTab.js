@@ -19,7 +19,7 @@ const WorkoutExerciseTab = ({ exercisesList }) => {
 
         <TouchableOpacity>
           <View>
-            <Text> Start Workout</Text>
+            <Text>Start Workout</Text>
           </View>
         </TouchableOpacity>
       </View>

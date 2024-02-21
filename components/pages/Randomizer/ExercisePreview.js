@@ -1,51 +1,73 @@
 import React from "react";
 import { Image, Text, TouchableOpacity, View } from "react-native";
-import { ImageBackground } from "react-native-web";
+import { ImageBackground } from "react-native";
 import playButtonTrans from "../../public/playButton.png";
 import { LogInStyles } from "../LogIn/loginStyles";
 import stopwatchTimer from "../../public/timeClock.png";
 import { useExerciseContext } from "../../context/exerciseContext";
+import back from "../../public/back.png";
+import StopWatch from "../../icons/stopWatch";
+import PlayButton from "../../icons/playButtonBig";
+import { workoutsStyle } from "./workoutsStyle.js";
 
 const ExercisePreview = () => {
   const { exerciseData } = useExerciseContext();
 
-  const exercise = exerciseData;
+  const exercise = {
+    image: back,
+    status: "Uncompleted",
+    name: "Incline Bench",
+    time: 30,
+    description:
+      "In this short tutorial, we'll guide you through the basics of performing a bench press, a fundamental exercise for building chest, shoulder, and triceps strength.",
+  };
 
   return (
     <View style={{ flexDirection: "column" }}>
-      <View style={{ width: "100%", height: "450px", flexDirection: "column" }}>
+      <View style={{ width: "100%", height: 450, flexDirection: "column" }}>
         <ImageBackground source={exercise?.image} style={{ height: "100%" }}>
-          <Image
-            source={playButtonTrans}
+          <View
             style={{
-              alignSelf: "center",
-              top: "225px",
-              height: "72px",
-              width: "72px",
-            }}
-          />
-          <Text
-            style={{
-              fontWeight: "700",
-              fontSize: "36",
-              alignSelf: "center",
-              color: "#FFFFFF",
-              top: "300px",
+              flex: 1,
+              justifyContent: "center", // Center vertically in the ImageBackground
+              alignItems: "center", // Center horizontally in the ImageBackground
             }}
           >
-            {exercise?.name}
-          </Text>
-          <Text
+            <TouchableOpacity
+              style={workoutsStyle.previewButton}
+              onPress={() => handleExercise(exercise)}
+            >
+              <PlayButton />
+            </TouchableOpacity>
+          </View>
+          <View
             style={{
-              fontWeight: "500",
-              fontSize: "18",
-              alignSelf: "center",
-              color: "#FFFFFF",
-              top: "300px",
+              justifyContent: "flex-end",
+              alignItems: "center",
+              paddingBottom: 20,
             }}
           >
-            With {exercise?.trainer} Trainer
-          </Text>
+            <Text
+              style={{
+                fontWeight: 700,
+                fontSize: 36,
+                alignSelf: "center",
+                color: "#FFFFFF",
+              }}
+            >
+              {exercise?.name}
+            </Text>
+            <Text
+              style={{
+                fontWeight: 500,
+                fontSize: 18,
+                alignSelf: "center",
+                color: "#FFFFFF",
+              }}
+            >
+              With {exercise?.trainer} Trainer
+            </Text>
+          </View>
         </ImageBackground>
       </View>
 
@@ -59,49 +81,40 @@ const ExercisePreview = () => {
       >
         <Text
           style={{
-            fontSize: "16px",
+            fontSize: 16,
             color: "#FFFFFF",
             alignSelf: "center",
-            top: "32px",
+            top: 32,
+            paddingBottom: 120,
           }}
         >
           {exercise?.description}
         </Text>
         <TouchableOpacity
           style={{
+            justifyContent: "center",
+            alignItems: "center",
             backgroundColor: "#FF8036",
-            borderRadius: "12px",
-            border: "1px solid #37383C",
-            marginTop: "24px",
-            height: "54px",
-            marginRight: "24px",
-            marginLeft: "24px",
-            padding: "14px",
-            flexDirection: "row",
-            top: "210px",
+            borderRadius: 12,
+            borderWidth: 1,
+            borderColor: "#37383C",
+            height: 54,
+            paddingHorizontal: 24, // Add some horizontal padding if needed
           }}
         >
-          <Text
-            style={{
-              fontWeight: "600",
-              fontSize: "20px",
-              color: "#FFFFFF",
-              left: "70px",
-              marginTop: "-4px",
-            }}
-          >
-            Start Workout
-            <Image
-              source={stopwatchTimer}
+          <View style={{ flexDirection: "row", alignItems: "center" }}>
+            <Text
               style={{
-                alignSelf: "center",
-                left: "20px",
-                top: "4px",
-                width: "24px",
-                height: "24px",
+                fontWeight: "600",
+                fontSize: 20,
+                color: "#FFFFFF",
+                marginRight: 8, // Add some space between text and SVG if needed
               }}
-            />
-          </Text>
+            >
+              Start Workout
+            </Text>
+            <StopWatch />
+          </View>
         </TouchableOpacity>
       </View>
     </View>
