@@ -139,7 +139,6 @@ const WorkoutsExerciseList = ({ navigation }) => {
         backgroundColor: "#111214",
       }}
     >
-      {" "}
       <HomePart1 person={person} />
       <View>
         <Text style={workoutsStyle.text}>Your selected type exercises</Text>
