@@ -5,7 +5,12 @@
     "version": "1.0.0",
     "assetBundlePatterns": [
       "**/*"
-    ]
+    ],
+    "extra": {
+      "eas": {
+        "projectId": "e288bd2f-e388-4ac6-b59b-0fcbf60ddbd6"
+      }
+    }
   },
   "name": "fitness-app-prod"
 }
