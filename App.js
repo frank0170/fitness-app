@@ -18,6 +18,8 @@ import WorkoutsIcon from "./components/icons/workoutsIcon";
 import Profile from "./components/pages/Profile/ProfileContainer";
 import ProfileIcon from "./components/icons/profileIcon";
 
+import SignUp from "./components/pages/LogIn/signIn";
+
 import Randomizer from "./components/pages/Randomizer/RandomizerNavigation";
 import RandomizerIcon from "./components/icons/randomizer";
 
@@ -59,7 +61,7 @@ const AppNavigation = () => {
         <Tab.Screen name="Home" component={Home} />
         <Tab.Screen name="Workouts" component={Workouts} />
         <Tab.Screen name="Randomizer" component={Randomizer} />
-        <Tab.Screen name="Profile" component={Profile} />
+        <Tab.Screen name="Profile" component={SignUp} />
       </Tab.Navigator>
     </NavigationContainer>
   );

@@ -19,7 +19,7 @@ const forgotPass = () => {
 
         <Text
           style={{
-            fontSize: "28px",
+            fontSize: 28,
             fontWeight: "500",
             color: "#FFFFFF",
             left: "5%",
@@ -31,7 +31,7 @@ const forgotPass = () => {
 
         <Text
           style={{
-            fontSize: "16px",
+            fontSize: 16,
             fontWeight: "400",
             top: "10%",
             color: "#6B7280",
@@ -51,7 +51,7 @@ const forgotPass = () => {
             style={{
               color: "#FFFFFF",
               left: "35%",
-              fontSize: "18px",
+              fontSize: 18,
               fontWeight: "500",
             }}
           >

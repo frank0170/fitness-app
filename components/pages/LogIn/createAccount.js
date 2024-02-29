@@ -21,7 +21,7 @@ const createAccount = () => {
 
           <Text
             style={{
-              fontSize: "16px",
+              fontSize: 16,
               fontWeight: "500",
               color: "#FFFFFF",
               left: "30%",
@@ -33,7 +33,6 @@ const createAccount = () => {
         </View>
 
         <TouchableOpacity style={[LogInStyles.greyBox, { top: "12%" }]}>
-          {" "}
           <Image
             source={appleIcon}
             style={{
@@ -48,7 +47,7 @@ const createAccount = () => {
               color: "#FFFFFF",
               alignSelf: "center",
               left: "26%",
-              fontSize: "18px",
+              fontSize: 18,
               fontWeight: "500",
             }}
           >
@@ -57,7 +56,6 @@ const createAccount = () => {
         </TouchableOpacity>
 
         <TouchableOpacity style={[LogInStyles.greyBox, { top: "10%" }]}>
-          {" "}
           <Image
             source={googleIcon}
             style={{
@@ -72,7 +70,7 @@ const createAccount = () => {
               color: "#FFFFFF",
               alignSelf: "center",
               left: "26%",
-              fontSize: "18px",
+              fontSize: 18,
               fontWeight: "500",
             }}
           >
@@ -85,11 +83,8 @@ const createAccount = () => {
             source={line}
             style={{ height: "1px", alignSelf: "center", width: "81px" }}
           />
-          <Text
-            style={{ color: "#6B7280", fontSize: "14px", fontWeight: "400" }}
-          >
-            {" "}
-            Or sign in with email{" "}
+          <Text style={{ color: "#6B7280", fontSize: 14, fontWeight: "400" }}>
+            Or sign in with email
           </Text>
           <Image
             source={line}
@@ -113,7 +108,7 @@ const createAccount = () => {
           <Text
             style={{
               color: "#FFFFFF",
-              fontSize: "18px",
+              fontSize: 18,
               fontWeight: "500",
               left: "40%",
             }}
@@ -123,9 +118,7 @@ const createAccount = () => {
         </TouchableOpacity>
 
         <TouchableOpacity style={{ top: "32%", left: "20%" }}>
-          <Text
-            style={{ color: "#FFFFFF", fontSize: "16px", fontWeight: "400" }}
-          >
+          <Text style={{ color: "#FFFFFF", fontSize: 16, fontWeight: "400" }}>
             Already have an account?
             <Text style={{ color: "#FF8036" }}> Sign In</Text>
           </Text>

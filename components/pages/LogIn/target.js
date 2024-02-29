@@ -17,7 +17,7 @@ const target = () => {
           </TouchableOpacity>
           <Text
             style={{
-              fontSize: "16px",
+              fontSize: 16,
               fontWeight: "500",
               color: "#FFFFFF",
               left: "35%",
@@ -31,7 +31,7 @@ const target = () => {
         <Text
           style={{
             color: "#FFFFFF",
-            fontSize: "30px",
+            fontSize: 30,
             fontWeight: "500",
             left: "20%",
             top: "15%",
@@ -45,9 +45,7 @@ const target = () => {
           style={[LogInStyles.greyBox, { flexDirection: "row", top: "20%" }]}
         >
           <Image></Image>
-          <Text
-            style={{ color: "#FFFFFF", fontWeight: "500", fontSize: "16px" }}
-          >
+          <Text style={{ color: "#FFFFFF", fontWeight: "500", fontSize: 16 }}>
             I wanna lose weight
           </Text>
           <Image></Image>
@@ -57,9 +55,7 @@ const target = () => {
           style={[LogInStyles.greyBox, { flexDirection: "row", top: "18%" }]}
         >
           <Image></Image>
-          <Text
-            style={{ color: "#FFFFFF", fontWeight: "500", fontSize: "16px" }}
-          >
+          <Text style={{ color: "#FFFFFF", fontWeight: "500", fontSize: 16 }}>
             I wanna get bulks
           </Text>
           <Image></Image>
@@ -69,9 +65,7 @@ const target = () => {
           style={[LogInStyles.greyBox, { flexDirection: "row", top: "16%" }]}
         >
           <Image></Image>
-          <Text
-            style={{ color: "#FFFFFF", fontWeight: "500", fontSize: "16px" }}
-          >
+          <Text style={{ color: "#FFFFFF", fontWeight: "500", fontSize: 16 }}>
             I wanna gain endurance
           </Text>
           <Image></Image>
@@ -81,9 +75,7 @@ const target = () => {
           style={[LogInStyles.greyBox, { flexDirection: "row", top: "14%" }]}
         >
           <Image></Image>
-          <Text
-            style={{ color: "#FFFFFF", fontWeight: "500", fontSize: "16px" }}
-          >
+          <Text style={{ color: "#FFFFFF", fontWeight: "500", fontSize: 16 }}>
             Just trying out the app
           </Text>
           <Image></Image>
@@ -96,7 +88,7 @@ const target = () => {
               alignContent: "center",
               left: "40%",
               fontWeight: "500",
-              fontSize: "18px",
+              fontSize: 18,
             }}
           >
             Continue
