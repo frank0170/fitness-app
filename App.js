@@ -11,6 +11,7 @@ import { GestureHandlerRootView } from "react-native-gesture-handler";
 
 import Home from "./components/pages/Home/HomeContainer";
 import HomeIcon from "./components/icons/homeIcon";
+import ExercisePreview from "./components/pages/Home/WorkoutsHome/ExerciseDetails";
 
 import Workouts from "./components/pages/Workouts/WorkoutsNavigation";
 import WorkoutsIcon from "./components/icons/workoutsIcon";
@@ -58,7 +59,7 @@ const AppNavigation = () => {
         }}
       >
         {/* pus pt development */}
-        <Tab.Screen name="Home" component={Home} />
+        <Tab.Screen name="Home" component={ExercisePreview} />
         <Tab.Screen name="Workouts" component={Workouts} />
         <Tab.Screen name="Randomizer" component={Randomizer} />
         <Tab.Screen name="Profile" component={SignUp} />
