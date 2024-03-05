@@ -34,7 +34,6 @@ const HomePart1 = ({ person }) => {
       style={{
         backgroundColor: "#111214",
         marginLeft: 24,
-        marginTop: 9,
       }}
     >
       <Text style={homeStyles.home_1.date}>{formattedDate}</Text>

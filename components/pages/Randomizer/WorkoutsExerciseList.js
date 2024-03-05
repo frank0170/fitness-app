@@ -8,6 +8,8 @@ import { ImageBackground } from "react-native-web";
 import back from "../../public/back.png";
 import chest from "../../public/chest.png";
 import PlayButton from "../../icons/playButton";
+import { SafeAreaView } from "react-native-safe-area-context";
+import { ScrollView } from "react-native-gesture-handler";
 
 import { useExerciseContext } from "../../context/exerciseContext";
 
@@ -132,26 +134,54 @@ const WorkoutsExerciseList = ({ navigation }) => {
       name: "Decline Press",
       time: 30,
     },
+    {
+      image: back,
+      status: "Uncompleted",
+      name: "Incline Bench",
+      time: 30,
+    },
+    {
+      image: chest,
+      status: "Uncompleted",
+      name: "Dumbbell Flyes",
+      time: 30,
+    },
+    {
+      image: back,
+      status: "Uncompleted",
+      name: "Incline Bench",
+      time: 30,
+    },
+    {
+      image: chest,
+      status: "Uncompleted",
+      name: "Dumbbell Flyes",
+      time: 30,
+    },
   ];
   return (
-    <View
-      style={{
-        width: "100%",
-        height: "100%",
-        backgroundColor: "#111214",
-      }}
+    <SafeAreaView
+      style={{ flex: 1, backgroundColor: "#111214" }}
+      edges={["right", "top", "left"]}
     >
-      <HomePart1 person={person} />
-      <View>
-        <Text style={workoutsStyle.text}>Your selected type exercises</Text>
+      <ScrollView
+        style={{
+          flex: 1,
+          backgroundColor: "#111214",
+        }}
+        showsHorizontalScrollIndicator={false}
+        showsVerticalScrollIndicator={false}
+      >
+        <HomePart1 person={person} />
 
-        <View>
+        <Text style={workoutsStyle.text}>Your selected type exercises</Text>
+        <View style={{ marginBottom: 24 }}>
           {exercisesList.map((exercise) => (
             <WorkoutCard exercise={exercise} navigation={navigation} />
           ))}
         </View>
-      </View>
-    </View>
+      </ScrollView>
+    </SafeAreaView>
   );
 };
 

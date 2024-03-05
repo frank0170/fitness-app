@@ -67,7 +67,6 @@ export const homeStyles = StyleSheet.create({
       cardAll: {
         width: "100%",
         marginBottom: 12,
-        paddingRight: 24,
         height: 186,
         borderRadius: 12,
         borderWidth: 1,

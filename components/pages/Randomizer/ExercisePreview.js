@@ -19,12 +19,12 @@ const ExercisePreview = () => {
     name: "Incline Bench",
     time: 30,
     description:
-      "In this short tutorial, we'll guide you through the basics of performing a bench press, a fundamental exercise for building chest, shoulder, and triceps strength.",
+      "In this short tutorial, we'll guide you through the basics of performing a bench press, a fundamental exercise for building chest, shoulder, and triceps strength.  ",
   };
 
   return (
-    <View style={{ flexDirection: "column" }}>
-      <View style={{ width: "100%", height: 450, flexDirection: "column" }}>
+    <View style={{ flexDirection: "column", height: "100%" }}>
+      <View style={{ width: "100%", height: "60%", flexDirection: "column" }}>
         <ImageBackground source={exercise?.image} style={{ height: "100%" }}>
           <View
             style={{
@@ -77,15 +77,18 @@ const ExercisePreview = () => {
           backgroundColor: "#24262B",
           width: "100%",
           height: "100%",
+          alignItems: "flex-end",
+          padding: 20,
         }}
       >
         <Text
           style={{
             fontSize: 16,
-            color: "#FFFFFF",
+            color: "#D7D8D9",
             alignSelf: "center",
-            top: 32,
-            paddingBottom: 120,
+            height: "30%",
+            textAlign: "center",
+            fontWeight: 300,
           }}
         >
           {exercise?.description}
@@ -99,7 +102,7 @@ const ExercisePreview = () => {
             borderWidth: 1,
             borderColor: "#37383C",
             height: 54,
-            paddingHorizontal: 24, // Add some horizontal padding if needed
+            width: "100%",
           }}
         >
           <View style={{ flexDirection: "row", alignItems: "center" }}>

@@ -115,6 +115,7 @@ const HomePart2 = ({ person, sampleData }) => {
         horizontal={true}
         showsHorizontalScrollIndicator={false}
         showsVerticalScrollIndicator={false}
+        style={{ marginBottom: 24 }}
       >
         {sampleData.workouts.map((item) => (
           <WorkoutCard

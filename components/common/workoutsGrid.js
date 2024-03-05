@@ -176,7 +176,16 @@ const WorkoutsGrid = ({
             style={workoutsStyle.startButton}
             onPress={handleExerciseList}
           >
-            <Text style={{ color: "white" }}>See available workouts</Text>
+            <Text
+              style={{
+                color: "white",
+                fontSize: 16,
+                fontStyle: "normal",
+                fontWeight: 500,
+              }}
+            >
+              See available workouts
+            </Text>
           </TouchableOpacity>
         )}
       </View>
