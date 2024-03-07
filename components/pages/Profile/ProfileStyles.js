@@ -12,9 +12,11 @@ export const ProfileStyles = StyleSheet.create({
     },
     header:{
         backgroundColor: "#24262B",
-        borderRadius: "0,0,32,32",
-        height:200,
+        borderBottomLeftRadius: 32,
+        borderBottomRightRadius: 32,
+        height:180,
         width:"100%",
+        flex:1,
         justifyContent:"center",
         alignItems:"center",
     },

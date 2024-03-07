@@ -29,6 +29,7 @@ import createAccount from "./components/pages/LogIn/createAccount";
 import ProfilePage from "./components/pages/Profile/ProfilePage";
 import EditProfile from "./components/pages/Profile/EditProfile";
 import MySubs from "./components/pages/Profile/MySubs";
+import AboutUs from "./components/pages/Profile/AboutUs";
 
 const Tab = createBottomTabNavigator();
 
@@ -65,10 +66,10 @@ const AppNavigation = () => {
         }}
       >
         {/* pus pt development */}
-        <Tab.Screen name="Home" component={MySubs} />
-        <Tab.Screen name="Workouts" component={MailSignIn} />
+        <Tab.Screen name="Home" component={AboutUs} />
+        <Tab.Screen name="Workouts" component={ProfilePage} />
         <Tab.Screen name="Randomizer" component={EditProfile} />
-        <Tab.Screen name="Profile" component={ProfilePage} />
+        <Tab.Screen name="Profile" component={createAccount} />
       </Tab.Navigator>
     </NavigationContainer>
   );
