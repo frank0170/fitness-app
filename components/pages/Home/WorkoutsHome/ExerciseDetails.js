@@ -10,6 +10,7 @@ import PlayButton from "../../../icons/playButton";
 import { workoutsStyle } from "./workoutsStyle.js";
 import { useExerciseContext } from "../../../context/exerciseContext";
 import timeClock from "../../../public/timeClock.png";
+import { ScrollView } from "react-native-gesture-handler";
 
 const WorkoutCard = ({ exercise, navigation }) => {
   const { exerciseData, setExerciseData } = useExerciseContext();
@@ -117,7 +118,7 @@ const ExercisePreview = () => {
   ];
 
   return (
-    <View style={{ flexDirection: "column", height: "100%" }}>
+    <ScrollView>
       <View style={{ width: "100%", height: "60%", flexDirection: "column" }}>
         <ImageBackground source={exercise?.image} style={{ height: "100%" }}>
           <View
@@ -271,7 +272,7 @@ const ExercisePreview = () => {
           </View>
         </TouchableOpacity>
       </View>
-    </View>
+    </ScrollView>
   );
 };
 
