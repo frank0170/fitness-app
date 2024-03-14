@@ -24,25 +24,31 @@ const exercise = [
   {
     image: back,
     status: "Uncompleted",
-    name: "Incline Bench",
+    name: "BenchPress",
+    foto: "BenchPress",
     time: 30,
   },
   {
     image: undefined,
     status: "Uncompleted",
     name: "Dumbbell Flyes",
+    foto: "BenchPress",
+
     time: 30,
   },
   {
     image: undefined,
     status: "Uncompleted",
     name: "Bench Press",
+    foto: "BenchPress",
+
     time: 30,
   },
   {
     image: undefined,
     status: "Uncompleted",
     name: "Decline Press",
+    foto: "BenchPress",
     time: 30,
   },
 ];
@@ -52,7 +58,7 @@ const WorkoutCard = ({ exercise, navigation }) => {
 
   const handleExercise = (exercise) => {
     setExerciseData(exercise);
-    navigation.navigate("ExercisePreview");
+    navigation.navigate("ExercisePreviewWorkouts");
   };
   return (
     <View
@@ -70,7 +76,10 @@ const WorkoutCard = ({ exercise, navigation }) => {
       }}
     >
       <View>
-        <Image style={workoutsStyle.card_image} source={exercise.image} />
+        <Image
+          source={`https://shape-mentor-prod.fra1.cdn.digitaloceanspaces.com/ex-photo/${exercise.foto}.jpg`}
+          style={workoutsStyle?.card_image}
+        />
       </View>
 
       <View style={{ marginLeft: 24, top: -10 }}>
@@ -115,29 +124,42 @@ const WorkoutsExerciseList = ({ navigation }) => {
       status: "Uncompleted",
       name: "Incline Bench",
       time: 30,
+      video: "BenchPress",
+      foto: "BenchPress",
+      description:
+        "In this short tutorial, we'll guide you through the basics of performing a bench press, a fundamental exercise for building chest, shoulder, and triceps strength.  ",
     },
     {
       image: chest,
       status: "Uncompleted",
       name: "Dumbbell Flyes",
       time: 30,
+      video: "ArnoldShoulderPress",
+      foto: "ArnoldShoulderPress",
+
+      description:
+        "In this short tutorial, we'll guide you through the basics of performing a bench press, a fundamental exercise for building chest, shoulder, and triceps strength.  ",
     },
     {
       image: undefined,
       status: "Uncompleted",
       name: "Bench Press",
+      foto: "BenchPress",
       time: 30,
     },
     {
       image: undefined,
       status: "Uncompleted",
       name: "Decline Press",
+      foto: "BenchPress",
+
       time: 30,
     },
     {
       image: chest,
       status: "Uncompleted",
       name: "Dumbbell Flyes",
+      foto: "PlankDumbellPull",
       time: 30,
     },
     {

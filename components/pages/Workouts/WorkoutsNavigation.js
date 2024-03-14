@@ -7,6 +7,8 @@ import WorkoutsMainPage from "./WorkoutsMainPage";
 import WorkoutsExerciseList from "./WorkoutsExerciseList";
 import ExercisePreview from "./ExercisePreview";
 
+// import { VideoPlayer } from "../../common/videoElement";
+
 const WorkoutsStack = createNativeStackNavigator();
 
 const WorkoutsScreen = () => {
@@ -18,9 +20,10 @@ const WorkoutsScreen = () => {
         component={WorkoutsExerciseList}
       />
       <WorkoutsStack.Screen
-        name="ExercisePreview"
+        name="ExercisePreviewWorkouts"
         component={ExercisePreview}
       />
+      {/* <WorkoutsStack.Screen name="VideoPlayer" component={VideoPlayer} /> */}
     </WorkoutsStack.Navigator>
   );
 };

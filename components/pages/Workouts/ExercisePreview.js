@@ -10,18 +10,72 @@ import StopWatch from "../../icons/stopWatch";
 import PlayButton from "../../icons/playButtonBig";
 import { workoutsStyle } from "./workoutsStyle.js";
 
-const ExercisePreview = () => {
+import { StyleSheet } from "react-native";
+import { Video, ResizeMode } from "expo-av";
+
+export function VideoPlayer({ video }) {
+  const [status, setStatus] = React.useState({});
+  const [initiateFullscreen, setInitiateFullscreen] = React.useState(true); // Add state to initiate fullscreen on load
+
   const { exerciseData } = useExerciseContext();
 
-  const exercise = {
-    image: back,
-    status: "Uncompleted",
-    name: "Incline Bench",
-    time: 30,
-    description:
-      "In this short tutorial, we'll guide you through the basics of performing a bench press, a fundamental exercise for building chest, shoulder, and triceps strength.  ",
-  };
+  React.useEffect(() => {
+    // Automatically attempt to enter fullscreen mode when the video component has loaded and is ready
+    if (status.isLoaded && initiateFullscreen) {
+      video.current.presentFullscreenPlayer();
+      setInitiateFullscreen(false); // Prevent further attempts to enter fullscreen
+    }
+  }, [status.isLoaded, initiateFullscreen]);
 
+  return (
+    <View style={styles.container}>
+      <Video
+        ref={video}
+        source={{
+          uri: `https://shape-mentor-prod.fra1.cdn.digitaloceanspaces.com/${exerciseData?.video}.mp4`,
+        }}
+        useNativeControls
+        resizeMode={ResizeMode.CONTAIN}
+        isLooping
+        onPlaybackStatusUpdate={(statusUpdate) => {
+          setStatus(() => statusUpdate);
+          if (initiateFullscreen && statusUpdate.isLoaded) {
+            // Ensure fullscreen is only initiated when the video is fully loaded
+            video.current.presentFullscreenPlayer();
+            setInitiateFullscreen(false);
+          }
+        }}
+      />
+    </View>
+  );
+}
+
+const styles = StyleSheet.create({
+  container: {
+    flex: 1,
+  },
+  video: {
+    alignSelf: "center",
+    width: 320,
+    height: 200,
+  },
+  buttons: {
+    flexDirection: "row",
+    justifyContent: "center",
+    alignItems: "center",
+  },
+});
+
+const ExercisePreview = ({ navigation }) => {
+  const { exerciseData } = useExerciseContext();
+  const videoRef = React.useRef(null); // Ref for the video player
+
+  const exercise = exerciseData;
+
+  // Function to handle play button press
+  const handlePlayPress = () => {
+    videoRef.current.presentFullscreenPlayer(); // Directly trigger fullscreen
+  };
   return (
     <View style={{ flexDirection: "column", height: "100%" }}>
       <View style={{ width: "100%", height: "60%", flexDirection: "column" }}>
@@ -35,7 +89,7 @@ const ExercisePreview = () => {
           >
             <TouchableOpacity
               style={workoutsStyle.previewButton}
-              onPress={() => handleExercise(exercise)}
+              onPress={handlePlayPress}
             >
               <PlayButton />
             </TouchableOpacity>
@@ -120,6 +174,8 @@ const ExercisePreview = () => {
           </View>
         </TouchableOpacity>
       </View>
+
+      <VideoPlayer video={videoRef} />
     </View>
   );
 };

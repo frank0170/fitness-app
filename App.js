@@ -59,7 +59,7 @@ const AppNavigation = () => {
         }}
       >
         {/* pus pt development */}
-        <Tab.Screen name="Home" component={ExercisePreview} />
+        <Tab.Screen name="Home" component={Home} />
         <Tab.Screen name="Workouts" component={Workouts} />
         <Tab.Screen name="Randomizer" component={Randomizer} />
         <Tab.Screen name="Profile" component={SignUp} />
