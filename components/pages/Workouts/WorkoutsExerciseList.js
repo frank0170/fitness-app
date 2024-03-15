@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useEffect } from "react";
 import { Image, Text, TouchableOpacity, View } from "react-native";
 import playButton from "../../public/playButton.png";
 import timeClock from "../../public/timeClock.png";
@@ -11,7 +11,7 @@ import PlayButton from "../../icons/playButton";
 import { SafeAreaView } from "react-native-safe-area-context";
 import { ScrollView } from "react-native-gesture-handler";
 
-import { useExerciseContext } from "../../context/exerciseContext";
+import { useCategoryContext } from "../../context/categoryContext";
 
 // exercise ii un object ce are {
 //     image: ...
@@ -54,8 +54,6 @@ const exercise = [
 ];
 
 const WorkoutCard = ({ exercise, navigation }) => {
-  const { exerciseData, setExerciseData } = useExerciseContext();
-
   const handleExercise = (exercise) => {
     setExerciseData(exercise);
     navigation.navigate("ExercisePreviewWorkouts");
@@ -77,14 +75,17 @@ const WorkoutCard = ({ exercise, navigation }) => {
     >
       <View>
         <Image
-          source={`https://shape-mentor-prod.fra1.cdn.digitaloceanspaces.com/ex-photo/${exercise.foto}.jpg`}
+          source={`https://shape-mentor-prod.fra1.cdn.digitaloceanspaces.com/ex-photo/${exercise.photo}.jpg`}
           style={workoutsStyle?.card_image}
         />
       </View>
 
       <View style={{ marginLeft: 24, top: -10 }}>
-        <Text style={workoutsStyle.exText1}> {exercise.status}</Text>
-        <Text style={workoutsStyle.exText2}> {exercise.name} </Text>
+        <Text style={workoutsStyle.exText1}>
+          {" "}
+          {exercise.status ? "Completed" : "Uncompleted"}
+        </Text>
+        <Text style={workoutsStyle.exText2}> {exercise.exercise} </Text>
         <View style={{ flexDirection: "row", alignItems: "center" }}>
           <Image
             style={{ height: 16, width: 16, marginTop: 6, marginRight: 4 }}
@@ -105,6 +106,38 @@ const WorkoutCard = ({ exercise, navigation }) => {
 };
 
 const WorkoutsExerciseList = ({ navigation }) => {
+  const { categoryData } = useCategoryContext();
+
+  console.log("jypo", categoryData);
+
+  const [exercisesList, setExercisesList] = React.useState([]);
+
+  const sentData = {
+    category: categoryData,
+  };
+
+  useEffect(() => {
+    fetch("http://localhost:5050/api/workouts/workouts", {
+      method: "POST",
+      headers: {
+        "Content-Type": "application/json",
+      },
+      body: JSON.stringify(sentData),
+    })
+      .then((response) => {
+        if (!response.ok) {
+          throw new Error("Network response was not ok");
+        }
+        return response.json();
+      })
+      .then((data) => {
+        setExercisesList(data); // Assuming the data is the array of workouts
+      })
+      .catch((error) => {
+        console.error("There was a problem with your fetch operation:", error);
+      });
+  }, []); // Empty dependency array means this effect runs once after the initial render
+
   const person = {
     name: "Lucian",
     daysOfWeek: [
@@ -118,63 +151,6 @@ const WorkoutsExerciseList = ({ navigation }) => {
     ],
   };
 
-  const exercisesList = [
-    {
-      image: back,
-      status: "Uncompleted",
-      name: "Incline Bench",
-      time: 30,
-      video: "BenchPress",
-      foto: "BenchPress",
-      description:
-        "In this short tutorial, we'll guide you through the basics of performing a bench press, a fundamental exercise for building chest, shoulder, and triceps strength.  ",
-    },
-    {
-      image: chest,
-      status: "Uncompleted",
-      name: "Dumbbell Flyes",
-      time: 30,
-      video: "ArnoldShoulderPress",
-      foto: "ArnoldShoulderPress",
-
-      description:
-        "In this short tutorial, we'll guide you through the basics of performing a bench press, a fundamental exercise for building chest, shoulder, and triceps strength.  ",
-    },
-    {
-      image: undefined,
-      status: "Uncompleted",
-      name: "Bench Press",
-      foto: "BenchPress",
-      time: 30,
-    },
-    {
-      image: undefined,
-      status: "Uncompleted",
-      name: "Decline Press",
-      foto: "BenchPress",
-
-      time: 30,
-    },
-    {
-      image: chest,
-      status: "Uncompleted",
-      name: "Dumbbell Flyes",
-      foto: "PlankDumbellPull",
-      time: 30,
-    },
-    {
-      image: undefined,
-      status: "Uncompleted",
-      name: "Bench Press",
-      time: 30,
-    },
-    {
-      image: undefined,
-      status: "Uncompleted",
-      name: "Decline Press",
-      time: 30,
-    },
-  ];
   return (
     <SafeAreaView
       style={{ flex: 1, backgroundColor: "#111214" }}
@@ -190,8 +166,10 @@ const WorkoutsExerciseList = ({ navigation }) => {
       >
         <HomePart1 person={person} />
 
+        <Text> Workouts</Text>
+
         <Text style={workoutsStyle.text}>Your selected type exercises</Text>
-        <View style={{ marginBottom: 24 }}>
+        <View style={{ marginBottom: 24 }} key={exercisesList}>
           {exercisesList.map((exercise) => (
             <WorkoutCard exercise={exercise} navigation={navigation} />
           ))}

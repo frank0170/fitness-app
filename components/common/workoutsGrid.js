@@ -75,7 +75,11 @@ const WorkoutsGrid = ({
 
   const handleExerciseList = () => {
     setCategoryData(selectedItemsArray);
-    navigation.navigate("ExerciseList");
+    if (selectedItemsArray.length > 1) {
+      navigation.navigate("ExerciseListRandom");
+    } else {
+      navigation.navigate("ExerciseListWorkouts");
+    }
   };
 
   return (
@@ -171,7 +175,25 @@ const WorkoutsGrid = ({
           alignItems: "center", // Center children horizontally in the container
         }}
       >
-        {selectedItemsArray.length > 0 && (
+        {selectedItemsArray.length === 1 && !multipleSelection && (
+          <TouchableOpacity
+            style={workoutsStyle.startButton}
+            onPress={handleExerciseList}
+          >
+            <Text
+              style={{
+                color: "white",
+                fontSize: 16,
+                fontStyle: "normal",
+                fontWeight: 500,
+              }}
+            >
+              See available workouts
+            </Text>
+          </TouchableOpacity>
+        )}
+
+        {selectedItemsArray.length > 1 && multipleSelection && (
           <TouchableOpacity
             style={workoutsStyle.startButton}
             onPress={handleExerciseList}

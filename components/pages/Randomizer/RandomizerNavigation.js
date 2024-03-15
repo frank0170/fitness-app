@@ -14,11 +14,11 @@ const WorkoutsScreen = () => {
     <WorkoutsStack.Navigator screenOptions={{ headerShown: false }}>
       <WorkoutsStack.Screen name="MainPage" component={WorkoutsMainPage} />
       <WorkoutsStack.Screen
-        name="ExerciseList"
+        name="ExerciseListRandom"
         component={WorkoutsExerciseList}
       />
       <WorkoutsStack.Screen
-        name="ExercisePreview"
+        name="ExercisePreviewRandom"
         component={ExercisePreview}
       />
     </WorkoutsStack.Navigator>
