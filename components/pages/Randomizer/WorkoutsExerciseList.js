@@ -75,8 +75,11 @@ const WorkoutCard = ({ exercise, navigation }) => {
     >
       <View>
         <Image
-          source={`https://shape-mentor-prod.fra1.cdn.digitaloceanspaces.com/ex-photo/${exercise.photo}.jpg`}
+          source={{
+            uri: `https://shape-mentor-prod.fra1.digitaloceanspaces.com/ex-photo/${exercise.photo}.jpg`,
+          }}
           style={workoutsStyle?.card_image}
+          key={exercise}
         />
       </View>
 
@@ -117,13 +120,16 @@ const WorkoutsExerciseList = ({ navigation }) => {
   };
 
   useEffect(() => {
-    fetch("http://localhost:5050/api/workouts/randomizer", {
-      method: "POST",
-      headers: {
-        "Content-Type": "application/json",
-      },
-      body: JSON.stringify(sentData),
-    })
+    fetch(
+      "https://jellyfish-app-2-7736b.ondigitalocean.app/api/workouts/randomizer",
+      {
+        method: "POST",
+        headers: {
+          "Content-Type": "application/json",
+        },
+        body: JSON.stringify(sentData),
+      }
+    )
       .then((response) => {
         if (!response.ok) {
           throw new Error("Network response was not ok");
