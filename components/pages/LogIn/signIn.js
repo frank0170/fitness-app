@@ -6,7 +6,10 @@ import appleIcon from "../../public/appleIcon.png";
 import googleIcon from "../../public/googleIcon.png";
 import { ImageBackground } from "react-native";
 
+import { useAuth } from "../../context/loginContext";
+
 const SignUp = () => {
+  const { isAuthenticated } = useAuth();
   return (
     <View style={{ flexDirection: "column" }}>
       <View style={{ backgroundColor: "#111214" }}>
@@ -51,7 +54,7 @@ const SignUp = () => {
           </Text>
         </TouchableOpacity>
 
-        <TouchableOpacity style={LogInStyles.greyBox}>
+        <TouchableOpacity style={LogInStyles.greyBox} disabled>
           <Image
             source={appleIcon}
             style={{
@@ -74,7 +77,7 @@ const SignUp = () => {
           </Text>
         </TouchableOpacity>
 
-        <TouchableOpacity style={LogInStyles.greyBox}>
+        <TouchableOpacity style={LogInStyles.greyBox} disabled>
           <Image
             source={googleIcon}
             style={{

@@ -79,7 +79,12 @@ const ExercisePreview = ({ navigation }) => {
   return (
     <View style={{ flexDirection: "column", height: "100%" }}>
       <View style={{ width: "100%", height: "60%", flexDirection: "column" }}>
-        <ImageBackground source={exercise?.image} style={{ height: "100%" }}>
+        <ImageBackground
+          source={{
+            uri: `https://shape-mentor-prod.fra1.digitaloceanspaces.com/ex-photo/${exercise.photo}.jpg`,
+          }}
+          style={{ height: "100%" }}
+        >
           <View
             style={{
               flex: 1,

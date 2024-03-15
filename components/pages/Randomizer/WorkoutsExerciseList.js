@@ -10,6 +10,7 @@ import chest from "../../public/chest.png";
 import PlayButton from "../../icons/playButton";
 import { SafeAreaView } from "react-native-safe-area-context";
 import { ScrollView } from "react-native-gesture-handler";
+import { useExerciseContext } from "../../context/exerciseContext";
 
 import { useCategoryContext } from "../../context/categoryContext";
 
@@ -54,9 +55,10 @@ const exercise = [
 ];
 
 const WorkoutCard = ({ exercise, navigation }) => {
+  const { setExerciseData } = useExerciseContext();
   const handleExercise = (exercise) => {
     setExerciseData(exercise);
-    navigation.navigate("ExercisePreviewWorkouts");
+    navigation.navigate("ExercisePreviewRandom");
   };
   return (
     <View
@@ -79,7 +81,6 @@ const WorkoutCard = ({ exercise, navigation }) => {
             uri: `https://shape-mentor-prod.fra1.digitaloceanspaces.com/ex-photo/${exercise.photo}.jpg`,
           }}
           style={workoutsStyle?.card_image}
-          key={exercise}
         />
       </View>
 
@@ -116,12 +117,12 @@ const WorkoutsExerciseList = ({ navigation }) => {
   const [exercisesList, setExercisesList] = React.useState([]);
 
   const sentData = {
-    randomCategory: categoryData,
+    category: categoryData,
   };
 
   useEffect(() => {
     fetch(
-      "https://jellyfish-app-2-7736b.ondigitalocean.app/api/workouts/randomizer",
+      "https://jellyfish-app-2-7736b.ondigitalocean.app/api/workouts/workouts",
       {
         method: "POST",
         headers: {

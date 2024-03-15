@@ -10,6 +10,7 @@ import chest from "../../public/chest.png";
 import PlayButton from "../../icons/playButton";
 import { SafeAreaView } from "react-native-safe-area-context";
 import { ScrollView } from "react-native-gesture-handler";
+import { useExerciseContext } from "../../context/exerciseContext";
 
 import { useCategoryContext } from "../../context/categoryContext";
 
@@ -54,6 +55,7 @@ const exercise = [
 ];
 
 const WorkoutCard = ({ exercise, navigation }) => {
+  const { setExerciseData } = useExerciseContext();
   const handleExercise = (exercise) => {
     setExerciseData(exercise);
     navigation.navigate("ExercisePreviewWorkouts");
