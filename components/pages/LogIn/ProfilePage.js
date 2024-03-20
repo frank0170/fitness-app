@@ -23,6 +23,7 @@ import Folder from "../../icons/Folder.js";
 import DeleteRed from "../../icons/DeleteRed.js";
 import EditPhoto from "../../icons/EditPhoto.js";
 import ProBox from "../../icons/ProBox.js";
+import { useAuth } from "../../context/loginContext.js";
 
 const EditPhotoBox = () => {
   <View style={{ backgroundColor: "#24262B", width: 326, height: 335 }}>
@@ -54,6 +55,7 @@ const EditPhotoBox = () => {
 };
 
 const Profile = () => {
+  const { userData } = useAuth();
   return (
     <ScrollView
       style={{
@@ -131,7 +133,7 @@ const Profile = () => {
           top: "-10%",
         }}
       >
-        FName + Lname
+        {userData?.name}
       </Text>
       <Text
         style={{
@@ -142,7 +144,7 @@ const Profile = () => {
           top: "-10%",
         }}
       >
-        email
+        {userData?.email}
       </Text>
 
       <View style={{ flexDirection: "row", top: "-8%" }}>
@@ -171,7 +173,7 @@ const Profile = () => {
           </View>
 
           <View style={{ flexDirection: "row", top: "30%", left: "15%" }}>
-            <Text style={{ color: "#FFFFFF" }}>70 </Text>
+            <Text style={{ color: "#FFFFFF" }}>{userData?.weight}</Text>
             <Text style={{ color: "#888888" }}>kg</Text>
           </View>
         </View>
@@ -201,7 +203,7 @@ const Profile = () => {
           </View>
 
           <View style={{ flexDirection: "row", top: "30%", left: "15%" }}>
-            <Text style={{ color: "#FFFFFF" }}>170 </Text>
+            <Text style={{ color: "#FFFFFF" }}>{userData?.heigth}</Text>
             <Text style={{ color: "#888888" }}>cm</Text>
           </View>
         </View>
@@ -231,7 +233,7 @@ const Profile = () => {
           </View>
 
           <View style={{ flexDirection: "row", top: "30%", left: "15%" }}>
-            <Text style={{ color: "#FFFFFF" }}>22 </Text>
+            <Text style={{ color: "#FFFFFF" }}>{userData?.age}</Text>
             <Text style={{ color: "#888888" }}>years</Text>
           </View>
         </View>
@@ -249,7 +251,7 @@ const Profile = () => {
         ]}
       >
         <View style={{ top: "-10%", left: "5%" }}>
-          `` <UpgradePremium />
+          <UpgradePremium />
         </View>
 
         <View style={{ flexDirection: "column", left: "10%", top: "20%" }}>
@@ -377,10 +379,11 @@ const Profile = () => {
             left: "5%",
             alignContent: "center",
             justifyContent: "center",
+            marginBottom: 24,
           },
         ]}
       >
-        <LogOutIcon style={{ paddingTop: 16 }} />
+        <LogOutIcon style={{ paddingTop: 16, marginRight: 12 }} />
         <Text
           style={{
             paddingTop: 16,
