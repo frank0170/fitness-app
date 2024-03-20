@@ -5,6 +5,7 @@ import { createBottomTabNavigator } from "@react-navigation/bottom-tabs";
 import { ExerciseProvider } from "./components/context/exerciseContext";
 import { CategoryProvider } from "./components/context/categoryContext";
 import { AuthProvider } from "./components/context/loginContext";
+import { SignupProvider } from "./components/context/signupContext";
 // import "./App.css";
 
 import { GestureHandlerRootView } from "react-native-gesture-handler";
@@ -72,11 +73,13 @@ export default function App() {
   return (
     <GestureHandlerRootView style={{ flex: 1 }}>
       <AuthProvider>
-        <CategoryProvider>
-          <ExerciseProvider>
-            <AppNavigation />
-          </ExerciseProvider>
-        </CategoryProvider>
+        <SignupProvider>
+          <CategoryProvider>
+            <ExerciseProvider>
+              <AppNavigation />
+            </ExerciseProvider>
+          </CategoryProvider>
+        </SignupProvider>
       </AuthProvider>
     </GestureHandlerRootView>
   );

@@ -54,8 +54,16 @@ const EditPhotoBox = () => {
   </View>;
 };
 
-const Profile = () => {
-  const { userData } = useAuth();
+const Profile = ({ navigation }) => {
+  const { userData, logOut } = useAuth();
+
+  console.log("user", userData);
+
+  const handleLogOut = () => {
+    logOut();
+    navigation.navigate("CreateAccount");
+  };
+
   return (
     <ScrollView
       style={{
@@ -173,7 +181,9 @@ const Profile = () => {
           </View>
 
           <View style={{ flexDirection: "row", top: "30%", left: "15%" }}>
-            <Text style={{ color: "#FFFFFF" }}>{userData?.weight}</Text>
+            <Text style={{ color: "#FFFFFF", marginRight: 4 }}>
+              {userData?.weight}
+            </Text>
             <Text style={{ color: "#888888" }}>kg</Text>
           </View>
         </View>
@@ -203,7 +213,9 @@ const Profile = () => {
           </View>
 
           <View style={{ flexDirection: "row", top: "30%", left: "15%" }}>
-            <Text style={{ color: "#FFFFFF" }}>{userData?.heigth}</Text>
+            <Text style={{ color: "#FFFFFF", marginRight: 4 }}>
+              {userData?.height}
+            </Text>
             <Text style={{ color: "#888888" }}>cm</Text>
           </View>
         </View>
@@ -233,7 +245,9 @@ const Profile = () => {
           </View>
 
           <View style={{ flexDirection: "row", top: "30%", left: "15%" }}>
-            <Text style={{ color: "#FFFFFF" }}>{userData?.age}</Text>
+            <Text style={{ color: "#FFFFFF", marginRight: 4 }}>
+              {userData?.age}
+            </Text>
             <Text style={{ color: "#888888" }}>years</Text>
           </View>
         </View>
@@ -382,6 +396,7 @@ const Profile = () => {
             marginBottom: 24,
           },
         ]}
+        onPress={handleLogOut}
       >
         <LogOutIcon style={{ paddingTop: 16, marginRight: 12 }} />
         <Text

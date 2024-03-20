@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useEffect } from "react";
 import { Image, Text, TouchableOpacity, View, StyleSheet } from "react-native";
 import { LogInStyles } from "./loginStyles";
 import col from "../../public/exPhoto/col2.png";
@@ -10,6 +10,16 @@ import { useAuth } from "../../context/loginContext";
 import { ScrollView } from "react-native-web";
 
 const SignUp = ({ navigation }) => {
+  const { userData } = useAuth();
+
+  console.log(userData);
+
+  useEffect(() => {
+    if (userData) {
+      navigation.navigate("ProfilePage");
+    }
+  }, [userData, navigation]);
+
   const handleNewSignUp = () => {
     navigation.navigate("CreateAccount");
   };

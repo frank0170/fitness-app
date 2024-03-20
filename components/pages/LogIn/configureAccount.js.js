@@ -1,20 +1,21 @@
 import React from "react";
-import { Image, Text, TouchableOpacity, View, CheckBox } from "react-native";
-import { TextInput } from "react-native-web";
+import { Image, Text, TouchableOpacity, View, TextInput } from "react-native";
 import appleIcon from "../../public/appleIcon.png";
 import closeButton from "../../public/closeButton.png";
 import googleIcon from "../../public/googleIcon.png";
 import line from "../../public/line.png";
 import { LogInStyles } from "./loginStyles";
 import { useAuth } from "../../context/loginContext";
+import { useSignupContext } from "../../context/signupContext";
 import md5 from "md5";
 
 const configureAccount = ({ navigation }) => {
-  const { logIn } = useAuth();
+  const { logIn, userData } = useAuth();
+  const { signupDataContext } = useSignupContext();
   const [signUpData, setSignUpData] = React.useState({});
   const [errorMsg, setErrorMsg] = React.useState();
 
-  const [sliderValue, setSliderValue] = React.useState(0);
+  console.log("check", signupDataContext);
 
   const handleText = (value) => {
     setSignUpData((prev) => {
@@ -26,7 +27,6 @@ const configureAccount = ({ navigation }) => {
   const validatePasswords = () => {
     const { password, confirmPassword } = signUpData;
     if (password === confirmPassword) {
-      handleSignUpClick();
       navigation.navigate("ProfilePage");
     } else {
       setErrorMsg("Passwords do not match.");
@@ -34,11 +34,15 @@ const configureAccount = ({ navigation }) => {
   };
 
   const handleSetUp = () => {
+    handleSignUpClick();
     navigation.navigate("ProfilePage");
   };
 
+  console.log(userData);
   const handleSignUpClick = async () => {
-    const { email, password } = signUpData;
+    const { name, weight, height, age, fitnessLevel } = signUpData;
+
+    const { email, password } = signupDataContext;
 
     try {
       const encryptedPassword = md5(password);
@@ -50,7 +54,15 @@ const configureAccount = ({ navigation }) => {
           headers: {
             "Content-Type": "application/json",
           },
-          body: JSON.stringify({ email, password: encryptedPassword }),
+          body: JSON.stringify({
+            email,
+            password: encryptedPassword,
+            name,
+            weight,
+            height,
+            age,
+            fitnessLevel,
+          }),
         }
       );
 
@@ -63,6 +75,7 @@ const configureAccount = ({ navigation }) => {
 
       if (response.ok) {
         logIn(loginData);
+        console.log(loginData);
       }
     } catch (error) {
       console.log(error);
@@ -118,25 +131,31 @@ const configureAccount = ({ navigation }) => {
               style={LogInStyles.inputBox}
               placeholder="Name"
               placeholderTextColor="#6B7280"
-              onChange={(e) => handleText({ email: e.target.value })}
+              onChange={(e) => handleText({ name: e.target.value })}
             />
             <TextInput
               style={LogInStyles.inputBox}
               placeholder="Gender"
               placeholderTextColor="#6B7280"
-              onChange={(e) => handleText({ password: e.target.value })}
+              onChange={(e) => handleText({ gender: e.target.value })}
             />
             <TextInput
               style={LogInStyles.inputBox}
               placeholder="Age"
               placeholderTextColor="#6B7280"
-              onChange={(e) => handleText({ confirmPassword: e.target.value })}
+              onChange={(e) => handleText({ age: e.target.value })}
             />
             <TextInput
               style={LogInStyles.inputBox}
               placeholder="Weight"
               placeholderTextColor="#6B7280"
-              onChange={(e) => handleText({ confirmPassword: e.target.value })}
+              onChange={(e) => handleText({ weight: e.target.value })}
+            />
+            <TextInput
+              style={LogInStyles.inputBox}
+              placeholder="Height"
+              placeholderTextColor="#6B7280"
+              onChange={(e) => handleText({ height: e.target.value })}
             />
 
             <View
@@ -167,14 +186,14 @@ const configureAccount = ({ navigation }) => {
               style={LogInStyles.inputBox}
               placeholder="Rate your fitness level (1-5)"
               placeholderTextColor="#6B7280"
-              onChange={(e) => handleText({ confirmPassword: e.target.value })}
+              onChange={(e) => handleText({ fitnessLevel: e.target.value })}
             />
 
             <TextInput
               style={LogInStyles.inputBox}
               placeholder="How many days/week will you commit?"
               placeholderTextColor="#6B7280"
-              onChange={(e) => handleText({ confirmPassword: e.target.value })}
+              onChange={(e) => handleText({ daysWeek: e.target.value })}
             />
 
             <TouchableOpacity

@@ -7,13 +7,16 @@ import googleIcon from "../../public/googleIcon.png";
 import line from "../../public/line.png";
 import { LogInStyles } from "./loginStyles";
 import { useAuth } from "../../context/loginContext";
+import { useSignupContext } from "../../context/signupContext";
 import md5 from "md5";
 
 const createAccount = ({ navigation }) => {
-  const { logIn } = useAuth();
+  const { logIn, userData } = useAuth();
+  const { setSignupDataContext } = useSignupContext();
   const [signUpData, setSignUpData] = React.useState({});
   const [errorMsg, setErrorMsg] = React.useState();
 
+  console.log(userData);
   const handleText = (value) => {
     setSignUpData((prev) => {
       return { ...prev, ...value };
@@ -24,7 +27,7 @@ const createAccount = ({ navigation }) => {
   const validatePasswords = () => {
     const { password, confirmPassword } = signUpData;
     if (password === confirmPassword) {
-      // handleSignUpClick();
+      setSignupDataContext(signUpData);
       navigation.navigate("ConfigureAccount");
     } else {
       setErrorMsg("Passwords do not match.");
@@ -57,6 +60,7 @@ const createAccount = ({ navigation }) => {
 
       if (response.ok) {
         logIn(loginData);
+        navigation.navigate("ConfigureAccount");
       }
     } catch (error) {
       console.log(error);
