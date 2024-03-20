@@ -8,8 +8,12 @@ import { ImageBackground } from "react-native";
 
 import { useAuth } from "../../context/loginContext";
 
-const SignUp = () => {
+const SignUp = ({ navigation }) => {
   const { isAuthenticated } = useAuth();
+
+  const handleNewSignUp = () => {
+    navigation.navigate("CreateAccount");
+  };
   return (
     <View style={{ flexDirection: "column" }}>
       <View style={{ backgroundColor: "#111214" }}>
@@ -40,7 +44,10 @@ const SignUp = () => {
           One best app for all things fitness
         </Text>
 
-        <TouchableOpacity style={LogInStyles.orangeBox}>
+        <TouchableOpacity
+          style={LogInStyles.orangeBox}
+          onPress={handleNewSignUp}
+        >
           <Text
             style={{
               color: "#FFFFFF",

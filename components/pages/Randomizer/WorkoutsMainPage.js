@@ -26,7 +26,7 @@ const WorkoutsMainPage = ({ navigation }) => {
         </Text>
 
         <Text style={workoutsStyle.subtitle}>
-          You can select 2-3 muscle groups.
+          You need to select 2-3 muscle groups.
         </Text>
 
         <WorkoutsGrid

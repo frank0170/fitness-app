@@ -1,61 +1,47 @@
-import { createContext, useContext, useEffect, useState } from "react";
+// AuthContext.js
+import React, { createContext, useContext, useState, useEffect } from "react";
 import AsyncStorage from "@react-native-async-storage/async-storage";
 
 const AuthContext = createContext();
 
 export const AuthProvider = ({ children }) => {
-  const [isAuthenticated, setIsAuthenticated] = useState(false);
+  const [isLogged, setIsLogged] = useState(false);
   const [userData, setUserData] = useState(null);
 
-  // Function to load initial state
-  const loadInitialState = async () => {
-    try {
-      const storedIsAuthenticated = await AsyncStorage.getItem(
-        "isAuthenticated"
-      );
-      if (storedIsAuthenticated !== null) {
-        setIsAuthenticated(JSON.parse(storedIsAuthenticated));
-      }
-
-      const storedUserData = await AsyncStorage.getItem("userData");
-      if (storedUserData !== null) {
-        setUserData(JSON.parse(storedUserData));
-      }
-    } catch (e) {
-      // Handling error while reading from AsyncStorage
-      console.log(e);
-    }
-  };
-
-  // Load initial state from AsyncStorage
+  // Load the user's data from AsyncStorage
   useEffect(() => {
-    loadInitialState();
+    const loadUserData = async () => {
+      const isLoggedIn = await AsyncStorage.getItem("isLogged");
+      const data = await AsyncStorage.getItem("userData");
+      if (isLoggedIn !== null && data !== null) {
+        setIsLogged(JSON.parse(isLoggedIn));
+        setUserData(JSON.parse(data));
+      }
+    };
+
+    loadUserData();
   }, []);
 
-  // Effect to persist isAuthenticated
-  useEffect(() => {
-    AsyncStorage.setItem(
-      "isAuthenticated",
-      JSON.stringify(isAuthenticated)
-    ).catch((e) => console.log(e));
-  }, [isAuthenticated]);
+  const logIn = async (data) => {
+    await AsyncStorage.setItem("isLogged", JSON.stringify(true));
+    await AsyncStorage.setItem("userData", JSON.stringify(data));
+    setIsLogged(true);
+    setUserData(data);
+  };
 
-  // Effect to persist userData
-  useEffect(() => {
-    AsyncStorage.setItem("userData", JSON.stringify(userData)).catch((e) =>
-      console.log(e)
-    );
-  }, [userData]);
+  const logOut = async () => {
+    await AsyncStorage.removeItem("isLogged");
+    await AsyncStorage.removeItem("userData");
+    setIsLogged(false);
+    setUserData(null);
+  };
 
   return (
-    <AuthContext.Provider
-      value={{ isAuthenticated, setIsAuthenticated, userData, setUserData }}
-    >
+    <AuthContext.Provider value={{ isLogged, userData, logIn, logOut }}>
       {children}
     </AuthContext.Provider>
   );
 };
 
-export const useAuth = () => {
-  return useContext(AuthContext);
-};
+// Hook to use auth context
+export const useAuth = () => useContext(AuthContext);

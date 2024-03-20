@@ -6,9 +6,11 @@ import {
   ShouldersIcon,
   BackIcon,
   CardioIcon,
+  DisabledCardioIcon,
   LegsIcon,
   ArmsIcon,
   StretchingIcon,
+  DisabledStretchingIcon,
   AbsIcon,
 } from "../icons/workoutGridIcons.js";
 import { useCategoryContext } from "../context/categoryContext.js";
@@ -20,16 +22,23 @@ const WorkoutItem = ({
   onPress,
   selected,
   multipleSelection,
+  disabled,
 }) => {
   const selectedItems = multipleSelection ? [selected[0]] : selected;
   const isSelected = selectedItems.includes(text);
 
-  const cardStyle = isSelected
-    ? workoutsStyle.cardSelected
-    : workoutsStyle.card;
+  let cardStyle = isSelected ? workoutsStyle.cardSelected : workoutsStyle.card;
+
+  if (disabled) {
+    cardStyle = workoutsStyle.cardDisabled;
+  }
+
+  let cardText = disabled
+    ? workoutsStyle.cardTextDisabled
+    : workoutsStyle.cardText;
 
   return (
-    <TouchableOpacity style={cardStyle} onPress={onPress}>
+    <TouchableOpacity style={cardStyle} onPress={onPress} disabled={disabled}>
       <View
         style={{
           alignItems: "center",
@@ -38,7 +47,7 @@ const WorkoutItem = ({
       >
         {isSelected ? iconActive : icon}
       </View>
-      <Text style={workoutsStyle.cardText}>{text}</Text>
+      <Text style={cardText}>{text}</Text>
     </TouchableOpacity>
   );
 };
@@ -127,6 +136,7 @@ const WorkoutsGrid = ({
           text={"Cardio"}
           onPress={() => handleActive("Cardio")}
           selected={isActive}
+          disabled={true}
         />
         <WorkoutItem
           icon={<LegsIcon />}
@@ -157,7 +167,9 @@ const WorkoutsGrid = ({
           text={"Stretching"}
           onPress={() => handleActive("Stretching")}
           selected={isActive}
+          disabled={true}
         />
+
         <WorkoutItem
           icon={<AbsIcon />}
           iconActive={<AbsIcon isActive />}

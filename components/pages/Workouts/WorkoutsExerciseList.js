@@ -11,6 +11,7 @@ import PlayButton from "../../icons/playButton";
 import { SafeAreaView } from "react-native-safe-area-context";
 import { ScrollView } from "react-native-gesture-handler";
 import { useExerciseContext } from "../../context/exerciseContext";
+import CaloriesIcon from "../../icons/caloriesIcon.js";
 
 import { useCategoryContext } from "../../context/categoryContext";
 
@@ -83,22 +84,28 @@ const WorkoutCard = ({ exercise, navigation }) => {
           style={workoutsStyle?.card_image}
         />
       </View>
-
       <View style={{ marginLeft: 24, top: -10 }}>
-        <Text style={workoutsStyle.exText1}>
+        {/* <Text style={workoutsStyle.exText1}>
           {" "}
           {exercise.status ? "Completed" : "Uncompleted"}
-        </Text>
-        <Text style={workoutsStyle.exText2}> {exercise.exercise} </Text>
-        <View style={{ flexDirection: "row", alignItems: "center" }}>
-          <Image
-            style={{ height: 16, width: 16, marginTop: 6, marginRight: 4 }}
-            source={timeClock}
-          />
-          <Text style={workoutsStyle.exText3}>{exercise.time} sec</Text>
+        </Text> */}
+        <View>
+          <Text style={workoutsStyle.exText2}>{exercise.exercise}</Text>
+          <Text style={workoutsStyle.exText5}>{exercise.subCategory}</Text>
+        </View>
+        <View
+          style={{
+            display: "flex",
+            flexDirection: "row",
+            alignItems: "flex-end",
+            marginTop: 6,
+          }}
+        >
+          <CaloriesIcon />
+          <Text style={workoutsStyle.exText3}>{exercise.kcal} kcal/set</Text>
         </View>
       </View>
-
+      {/* // adaugat row cu time/ kcal-total/ 4x10 sets, vezi pe wapp cu ionut */}
       <TouchableOpacity
         style={workoutsStyle.playButton}
         onPress={() => handleExercise(exercise)}

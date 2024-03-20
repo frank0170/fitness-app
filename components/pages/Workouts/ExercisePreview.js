@@ -173,7 +173,7 @@ const ExercisePreview = ({ navigation }) => {
                 marginRight: 8, // Add some space between text and SVG if needed
               }}
             >
-              Start Workout
+              Start Exercise
             </Text>
             <StopWatch />
           </View>

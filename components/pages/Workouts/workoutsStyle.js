@@ -74,6 +74,7 @@ export const workoutsStyle = StyleSheet.create({
     height: 80,
   },
   playButton: {
+    zIndex: 99,
     backgroundColor: "#FF8036",
     alignSelf: "center",
     padding: 8,
@@ -127,6 +128,28 @@ export const workoutsStyle = StyleSheet.create({
   exText3: {
     textAlign: "justify",
     fontSize: 16,
+    fontStyle: "normal",
+    fontWeight: 500,
+    lineHeight: 20,
+    letterSpacing: "-0.048px",
+
+    color: "#D7D8D9",
+    marginTop: 6,
+  },
+
+  exText5: {
+    textAlign: "justify",
+    fontSize: 16,
+    fontStyle: "normal",
+    fontWeight: 500,
+    lineHeight: 20,
+    letterSpacing: "-0.048px",
+
+    color: "#D7D8D9",
+  },
+  exText4: {
+    textAlign: "justify",
+    fontSize: 12,
     fontStyle: "normal",
     fontWeight: 500,
     lineHeight: 20,

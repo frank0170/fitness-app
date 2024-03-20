@@ -6,123 +6,205 @@ import closeButton from "../../public/closeButton.png";
 import googleIcon from "../../public/googleIcon.png";
 import line from "../../public/line.png";
 import { LogInStyles } from "./loginStyles";
+import { useAuth } from "../../context/loginContext";
+import md5 from "md5";
 
-const createAccount = () => {
+const createAccount = ({ navigation }) => {
+  const { logIn } = useAuth();
+  const [signUpData, setSignUpData] = React.useState({});
+  const [errorMsg, setErrorMsg] = React.useState();
+
+  const handleText = (value) => {
+    setSignUpData((prev) => {
+      return { ...prev, ...value };
+    });
+    setErrorMsg(null);
+  };
+
+  const validatePasswords = () => {
+    const { password, confirmPassword } = signUpData;
+    if (password === confirmPassword) {
+      // handleSignUpClick();
+      navigation.navigate("ConfigureAccount");
+    } else {
+      setErrorMsg("Passwords do not match.");
+    }
+  };
+
+  const handleSignUpClick = async () => {
+    const { email, password } = signUpData;
+
+    try {
+      const encryptedPassword = md5(password);
+
+      const response = await fetch(
+        "https://jellyfish-app-2-7736b.ondigitalocean.app/api/users",
+        {
+          method: "POST",
+          headers: {
+            "Content-Type": "application/json",
+          },
+          body: JSON.stringify({ email, password: encryptedPassword }),
+        }
+      );
+
+      if (!response.ok) {
+        const error = await response.json();
+        throw new Error(error.message);
+      }
+
+      const loginData = await response.json();
+
+      if (response.ok) {
+        logIn(loginData);
+      }
+    } catch (error) {
+      console.log(error);
+    }
+  };
+
   return (
-    <View style={{ backgroundColor: "#111214", height: "100%" }}>
-      <View style={{ flexDirection: "column", height: "100%" }}>
-        <View style={{ flexDirection: "row", top: "5%" }}>
-          <TouchableOpacity style={{ left: "5%", alignSelf: "center" }}>
-            <Image
-              source={closeButton}
-              style={{ height: "12px", width: "12px" }}
-            />
-          </TouchableOpacity>
-
-          <Text
-            style={{
-              fontSize: 16,
-              fontWeight: "500",
-              color: "#FFFFFF",
-              left: "30%",
-              alignSelf: "center",
-            }}
+    <View style={{ backgroundColor: "#111214", flex: 1, padding: 12 }}>
+      <View style={{ flex: 1 }}>
+        <View
+          style={{
+            marginVertical: 20,
+            paddingHorizontal: 10,
+            flexDirection: "row",
+            alignItems: "center",
+            justifyContent: "center",
+            backgroundColor: "#111214",
+            paddingHorizontal: 16,
+          }}
+        >
+          <TouchableOpacity
+            onPress={() => navigation.goBack()}
+            style={{ position: "absolute", left: 24 }}
           >
+            <Image source={closeButton} style={{ height: 14, width: 14 }} />
+          </TouchableOpacity>
+          <Text style={{ fontSize: 17, fontWeight: "600", color: "#FFFFFF" }}>
             Create an Account
           </Text>
         </View>
 
-        <TouchableOpacity style={[LogInStyles.greyBox, { top: "12%" }]}>
-          <Image
-            source={appleIcon}
-            style={{
-              left: "21%",
-              alignSelf: "center",
-              height: "18px",
-              width: "18px",
-            }}
-          />
+        {/* Wrapper View for Sign up buttons to control spacing with margin */}
+        <View style={{ marginTop: 20 }}>
+          <TouchableOpacity style={[LogInStyles.greyBox, { marginBottom: 10 }]}>
+            <View style={{ flexDirection: "row", alignItems: "center" }}>
+              <Image
+                source={appleIcon}
+                style={{ marginRight: 10, height: 18, width: 18 }}
+              />
+              <Text
+                style={{ color: "#FFFFFF", fontSize: 18, fontWeight: "500" }}
+              >
+                Sign up with Apple
+              </Text>
+            </View>
+          </TouchableOpacity>
+
+          <TouchableOpacity style={LogInStyles.greyBox}>
+            <View style={{ flexDirection: "row", alignItems: "center" }}>
+              <Image
+                source={googleIcon}
+                style={{ marginRight: 10, height: 18, width: 18 }}
+              />
+              <Text
+                style={{ color: "#FFFFFF", fontSize: 18, fontWeight: "500" }}
+              >
+                Sign up with Google
+              </Text>
+            </View>
+          </TouchableOpacity>
+        </View>
+
+        <View
+          style={{
+            flexDirection: "row",
+            justifyContent: "center",
+            alignItems: "center",
+            marginTop: 30,
+            marginBottom: 30,
+            paddingHorizontal: 24,
+          }}
+        >
+          <Image source={line} style={{ flex: 1, height: 1 }} />
           <Text
             style={{
-              color: "#FFFFFF",
-              alignSelf: "center",
-              left: "26%",
-              fontSize: 18,
-              fontWeight: "500",
+              color: "#6B7280",
+              fontSize: 14,
+              fontWeight: "400",
+              marginHorizontal: 8,
             }}
           >
-            Sign up with Apple
-          </Text>
-        </TouchableOpacity>
-
-        <TouchableOpacity style={[LogInStyles.greyBox, { top: "10%" }]}>
-          <Image
-            source={googleIcon}
-            style={{
-              left: "21%",
-              alignSelf: "center",
-              height: "18px",
-              width: "18px",
-            }}
-          />
-          <Text
-            style={{
-              color: "#FFFFFF",
-              alignSelf: "center",
-              left: "26%",
-              fontSize: 18,
-              fontWeight: "500",
-            }}
-          >
-            Sign up with Google
-          </Text>
-        </TouchableOpacity>
-
-        <View style={{ flexDirection: "row", top: "15%", left: "10%" }}>
-          <Image
-            source={line}
-            style={{ height: "1px", alignSelf: "center", width: "81px" }}
-          />
-          <Text style={{ color: "#6B7280", fontSize: 14, fontWeight: "400" }}>
             Or sign in with email
           </Text>
-          <Image
-            source={line}
-            style={{ height: "1px", alignSelf: "center", width: "81px" }}
-          />
+          <Image source={line} style={{ flex: 1, height: 1 }} />
         </View>
 
-        <View style={[LogInStyles.greyBox, { top: "16%" }]}>
-          <TextInput></TextInput>
-        </View>
+        <View style={{ justifyContent: "space-between", width: "100%" }}>
+          <View>
+            {/* Assume LogInStyles.inputBox already uses Flexbox appropriately */}
+            <TextInput
+              style={LogInStyles.inputBox}
+              placeholder="Email"
+              placeholderTextColor="#6B7280"
+              onChange={(e) => handleText({ email: e.target.value })}
+            />
+            <TextInput
+              style={LogInStyles.inputBox}
+              placeholder="Password"
+              placeholderTextColor="#6B7280"
+              secureTextEntry
+              onChange={(e) => handleText({ password: e.target.value })}
+            />
+            <TextInput
+              style={LogInStyles.inputBox}
+              placeholder="Confirm Password"
+              placeholderTextColor="#6B7280"
+              secureTextEntry
+              onChange={(e) => handleText({ confirmPassword: e.target.value })}
+            />
+            <Text style={{ color: "red", alignSelf: "center" }}>
+              {errorMsg}
+            </Text>
 
-        <View style={[LogInStyles.greyBox, { top: "14%" }]}>
-          <TextInput></TextInput>
-        </View>
+            <TouchableOpacity
+              style={[LogInStyles.inputBoxSignUp]}
+              onPress={validatePasswords}
+            >
+              <Text
+                style={{ color: "#FFFFFF", fontSize: 18, fontWeight: "500" }}
+              >
+                Sign up
+              </Text>
+            </TouchableOpacity>
+          </View>
 
-        <View style={[LogInStyles.greyBox, { top: "12%" }]}>
-          <TextInput></TextInput>
-        </View>
-
-        <TouchableOpacity style={[LogInStyles.orangeBox, { top: "12%" }]}>
-          <Text
+          {/* Wrapper View for bottom content to control spacing with padding or margin as needed */}
+          <View
             style={{
-              color: "#FFFFFF",
-              fontSize: 18,
-              fontWeight: "500",
-              left: "40%",
+              marginTop: 40,
+              paddingHorizontal: 10,
+              alignSelf: "center",
             }}
           >
-            Sign up
-          </Text>
-        </TouchableOpacity>
-
-        <TouchableOpacity style={{ top: "32%", left: "20%" }}>
-          <Text style={{ color: "#FFFFFF", fontSize: 16, fontWeight: "400" }}>
-            Already have an account?
-            <Text style={{ color: "#FF8036" }}> Sign In</Text>
-          </Text>
-        </TouchableOpacity>
+            <Text
+              style={{
+                color: "#FFFFFF",
+                fontSize: 16,
+                fontWeight: "400",
+                marginTop: 20,
+              }}
+            >
+              Already have an account?
+              <TouchableOpacity style={{ color: "#FF8036", marginLeft: 8 }}>
+                Sign In
+              </TouchableOpacity>
+            </Text>
+          </View>
+        </View>
       </View>
     </View>
   );
