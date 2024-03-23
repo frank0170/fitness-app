@@ -26,14 +26,18 @@ export const ProfileStyles = StyleSheet.create({
     height: 72,
     width: 105,
   },
+
   orangeBox: {
     backgroundColor: "#FE6F32",
     borderRadius: 12,
     border: "1px solid #37383C",
     height: 70,
-    width: "100%",
+    marginRight: 24,
+    marginLeft: 24,
+    padding: 14,
     flexDirection: "row",
   },
+
   greyBox: {
     backgroundColor: "#37383C",
     borderRadius: 12,
@@ -44,19 +48,23 @@ export const ProfileStyles = StyleSheet.create({
     marginLeft: 24,
     padding: 14,
     flexDirection: "row",
-    width: "100%",
   },
+
   whiteBox: {
     backgroundColor: "#FFFFFF",
     borderRadius: 11,
-    height: 50,
-    width: "100%",
+    border: "1px solid #37383C",
+    height: 54,
+    marginRight: 24,
+    marginLeft: 24,
+    padding: 14,
     flexDirection: "row",
   },
+
   subBox: {
     backgroundColor: "#24262B",
     borderRadius: 10,
     height: 250,
-    width: "100%",
+    width: 350,
   },
 });

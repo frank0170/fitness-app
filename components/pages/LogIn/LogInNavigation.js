@@ -7,6 +7,7 @@ import CreateAccount from "./createAccount";
 import SignIn from "./signIn";
 import ConfigureAccount from "./configureAccount.js";
 import Profile from "./ProfilePage";
+import LogIn from "./LogIn";
 
 const WorkoutsStack = createNativeStackNavigator();
 

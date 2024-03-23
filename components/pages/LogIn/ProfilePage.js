@@ -5,7 +5,7 @@ import BackArrowIcon from "../../icons/BackArrowIcon.js";
 import SettingsButton from "../../icons/SettingsButton.js";
 import icon from "./../../public/icon.png";
 import PhotoCircle from "./../../icons/PhotoCircle.js";
-import { ProfileStyles } from "./profileStyles";
+import { ProfileStyles } from "./ProfileStyles.js";
 import Weight from "../../icons/Weight.js";
 import Height from "../../icons/Height.js";
 import Age from "../../icons/Age.js";
@@ -155,10 +155,16 @@ const Profile = ({ navigation }) => {
         {userData?.email}
       </Text>
 
-      <View style={{ flexDirection: "row", top: "-8%" }}>
-        <View
-          style={[ProfileStyles.box, { left: "5%", flexDirection: "column" }]}
-        >
+      <View
+        style={{
+          justifyContent: "space-around",
+          flexDirection: "row",
+          top: "-8%",
+          marginLeft: 8,
+          marginRight: 8,
+        }}
+      >
+        <View style={[ProfileStyles.box, { flexDirection: "column" }]}>
           <View
             style={{
               flexDirection: "row",
@@ -188,9 +194,7 @@ const Profile = ({ navigation }) => {
           </View>
         </View>
 
-        <View
-          style={[ProfileStyles.box, { left: "9%", flexDirection: "column" }]}
-        >
+        <View style={[ProfileStyles.box, { flexDirection: "column" }]}>
           <View
             style={{
               flexDirection: "row",
@@ -220,9 +224,7 @@ const Profile = ({ navigation }) => {
           </View>
         </View>
 
-        <View
-          style={[ProfileStyles.box, { left: "13%", flexDirection: "column" }]}
-        >
+        <View style={[ProfileStyles.box, { lflexDirection: "column" }]}>
           <View
             style={{
               flexDirection: "row",
@@ -258,7 +260,7 @@ const Profile = ({ navigation }) => {
           ProfileStyles.orangeBox,
           {
             top: "-5%",
-            left: "5%",
+
             alignContent: "center",
             flexDirection: "row",
           },
@@ -268,7 +270,7 @@ const Profile = ({ navigation }) => {
           <UpgradePremium />
         </View>
 
-        <View style={{ flexDirection: "column", left: "10%", top: "20%" }}>
+        <View style={{ flexDirection: "column", top: "20%", left: "10%" }}>
           <View style={{ flexDirection: "row", alignItems: "center" }}>
             <ProBox />
             <Text
@@ -276,7 +278,6 @@ const Profile = ({ navigation }) => {
                 color: "#FFFFFF",
                 fontSize: 16,
                 fontWeight: 600,
-                left: "5%",
               }}
             >
               Upgrade to Premium
@@ -390,7 +391,6 @@ const Profile = ({ navigation }) => {
           ProfileStyles.whiteBox,
           {
             top: "-15%",
-            left: "5%",
             alignContent: "center",
             justifyContent: "center",
             marginBottom: 24,
@@ -398,10 +398,9 @@ const Profile = ({ navigation }) => {
         ]}
         onPress={handleLogOut}
       >
-        <LogOutIcon style={{ paddingTop: 16, marginRight: 12 }} />
+        <LogOutIcon style={{ marginRight: 12 }} />
         <Text
           style={{
-            paddingTop: 16,
             color: "#111214",
             fontSize: 14,
             fontWeight: 600,

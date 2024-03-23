@@ -5,6 +5,7 @@ import col from "../../public/exPhoto/col2.png";
 import appleIcon from "../../public/appleIcon.png";
 import googleIcon from "../../public/googleIcon.png";
 import { ImageBackground } from "react-native";
+import Profile from "./ProfilePage";
 
 import { useAuth } from "../../context/loginContext";
 import { ScrollView } from "react-native-web";
@@ -25,41 +26,50 @@ const SignUp = ({ navigation }) => {
   };
 
   return (
-    <ScrollView style={styles.container}>
-      <ImageBackground source={col} style={styles.imageBackground}>
-        <View style={styles.titleContainer}>
-          <Text style={styles.headerTitle}>Your Shape Mentor</Text>
-          <Text style={styles.subtitle}>
-            One best app for all things fitness
-          </Text>
-        </View>
-      </ImageBackground>
+    <>
+      {!userData ? (
+        <ScrollView style={styles.container}>
+          <ImageBackground source={col} style={styles.imageBackground}>
+            <View style={styles.titleContainer}>
+              <Text style={styles.headerTitle}>Your Shape Mentor</Text>
+              <Text style={styles.subtitle}>
+                One best app for all things fitness
+              </Text>
+            </View>
+          </ImageBackground>
 
-      <View style={styles.bottomContainer}>
-        <TouchableOpacity style={styles.orangeButton} onPress={handleNewSignUp}>
-          <Text style={styles.buttonText}>Sign up with email</Text>
-        </TouchableOpacity>
+          <View style={styles.bottomContainer}>
+            <TouchableOpacity
+              style={styles.orangeButton}
+              onPress={handleNewSignUp}
+            >
+              <Text style={styles.buttonText}>Sign up with email</Text>
+            </TouchableOpacity>
 
-        <TouchableOpacity style={styles.greyButton} disabled>
-          <Image source={appleIcon} style={styles.icon} />
-          <Text style={[styles.buttonText, { paddingLeft: 10 }]}>
-            Sign up with Apple
-          </Text>
-        </TouchableOpacity>
+            <TouchableOpacity style={styles.greyButton} disabled>
+              <Image source={appleIcon} style={styles.icon} />
+              <Text style={[styles.buttonText, { paddingLeft: 10 }]}>
+                Sign up with Apple
+              </Text>
+            </TouchableOpacity>
 
-        <TouchableOpacity style={styles.greyButton} disabled>
-          <Image source={googleIcon} style={styles.icon} />
-          <Text style={[styles.buttonText, { paddingLeft: 10 }]}>
-            Sign up with Google
-          </Text>
-        </TouchableOpacity>
+            <TouchableOpacity style={styles.greyButton} disabled>
+              <Image source={googleIcon} style={styles.icon} />
+              <Text style={[styles.buttonText, { paddingLeft: 10 }]}>
+                Sign up with Google
+              </Text>
+            </TouchableOpacity>
 
-        <Text style={styles.signInText}>
-          Already have an account?
-          <Text style={styles.signInLink}>Sign in</Text>
-        </Text>
-      </View>
-    </ScrollView>
+            <Text style={styles.signInText}>
+              Already have an account?
+              <Text style={styles.signInLink}>Sign in</Text>
+            </Text>
+          </View>
+        </ScrollView>
+      ) : (
+        <Profile />
+      )}
+    </>
   );
 };
 
