@@ -1,6 +1,8 @@
 import React from "react";
 import { Image, Text, TouchableOpacity, View } from "react-native";
-import { TextInput } from "react-native-web";
+import { TextInput } from "react-native";
+import { SafeAreaView } from "react-native-safe-area-context";
+
 import appleIcon from "../../public/appleIcon.png";
 import closeButton from "../../public/closeButton.png";
 import googleIcon from "../../public/googleIcon.png";
@@ -10,7 +12,7 @@ import { useAuth } from "../../context/loginContext";
 import { useSignupContext } from "../../context/signupContext";
 import md5 from "md5";
 
-const createAccount = ({ navigation }) => {
+const CreateAccount = ({ navigation }) => {
   const { logIn, userData } = useAuth();
   const { setSignupDataContext } = useSignupContext();
   const [signUpData, setSignUpData] = React.useState({});
@@ -100,7 +102,15 @@ const createAccount = ({ navigation }) => {
   };
 
   return (
-    <View style={{ backgroundColor: "#111214", flex: 1, padding: 12 }}>
+    <SafeAreaView
+      style={{
+        backgroundColor: "#111214",
+        flex: 1,
+        paddingLeft: 12,
+        paddingRight: 12,
+        paddingBottom: 12,
+      }}
+    >
       <View style={{ flex: 1 }}>
         <View
           style={{
@@ -247,14 +257,14 @@ const createAccount = ({ navigation }) => {
               }}
             >
               <TouchableOpacity style={{ color: "#FF8036", marginLeft: 8 }}>
-                Forgot Password?
+                <Text>Forgot Password?</Text>
               </TouchableOpacity>
             </Text>
           </View>
         </View>
       </View>
-    </View>
+    </SafeAreaView>
   );
 };
 
-export default createAccount;
+export default CreateAccount;

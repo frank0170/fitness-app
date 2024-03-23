@@ -8,7 +8,7 @@ import { ImageBackground } from "react-native";
 import Profile from "./ProfilePage";
 
 import { useAuth } from "../../context/loginContext";
-import { ScrollView } from "react-native-web";
+import { ScrollView } from "react-native";
 
 const SignUp = ({ navigation }) => {
   const { userData } = useAuth();
@@ -62,7 +62,11 @@ const SignUp = ({ navigation }) => {
 
             <Text style={styles.signInText}>
               Already have an account?
-              <Text style={styles.signInLink}>Sign in</Text>
+              <TouchableOpacity
+                onPress={() => navigation.navigate("LoginAccount")}
+              >
+                <Text style={styles.signInLink}>Sign in</Text>
+              </TouchableOpacity>
             </Text>
           </View>
         </ScrollView>

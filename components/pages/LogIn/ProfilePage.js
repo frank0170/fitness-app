@@ -1,6 +1,6 @@
 import React from "react";
 import { Image, Text, TouchableOpacity, View } from "react-native";
-import { ScrollView } from "react-native-web";
+import { ScrollView } from "react-native";
 import BackArrowIcon from "../../icons/BackArrowIcon.js";
 import SettingsButton from "../../icons/SettingsButton.js";
 import icon from "./../../public/icon.png";

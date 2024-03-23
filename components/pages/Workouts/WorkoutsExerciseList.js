@@ -4,7 +4,7 @@ import playButton from "../../public/playButton.png";
 import timeClock from "../../public/timeClock.png";
 import HomePart1 from "../Home/HomePart1.js";
 import { workoutsStyle } from "./workoutsStyle.js";
-import { ImageBackground } from "react-native-web";
+import { ImageBackground } from "react-native";
 import back from "../../public/back.png";
 import chest from "../../public/chest.png";
 import PlayButton from "../../icons/playButton";

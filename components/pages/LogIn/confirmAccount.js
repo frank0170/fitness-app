@@ -1,10 +1,10 @@
 import React, { useState } from "react";
 import { Image, Text, TouchableOpacity, View } from "react-native";
-import { TextInput } from "react-native-web";
+import { TextInput } from "react-native";
 import closeButton from "../../public/closeButton.png";
 import { LogInStyles } from "./loginStyles";
 
-const confirmAccount = () => {
+const ConfirmAccount = () => {
   return (
     <View style={{ backgroundColor: "#111214", height: "100%" }}>
       <View style={{ flexDirection: "column", height: "100%" }}>
@@ -48,4 +48,4 @@ const confirmAccount = () => {
   );
 };
 
-export default confirmAccount;
+export default CreateAccount;

@@ -9,7 +9,7 @@ import { useAuth } from "../../context/loginContext";
 import { useSignupContext } from "../../context/signupContext";
 import md5 from "md5";
 
-const configureAccount = ({ navigation }) => {
+const ConfigureAccount = ({ navigation }) => {
   const { logIn, userData } = useAuth();
   const { signupDataContext } = useSignupContext();
   const [signUpData, setSignUpData] = React.useState({});
@@ -213,4 +213,4 @@ const configureAccount = ({ navigation }) => {
   );
 };
 
-export default configureAccount;
+export default ConfigureAccount;
