@@ -11,6 +11,7 @@ import PlayButton from "../../icons/playButton";
 import { SafeAreaView } from "react-native-safe-area-context";
 import { ScrollView } from "react-native-gesture-handler";
 import { useExerciseContext } from "../../context/exerciseContext";
+import { useAuth } from "../../context/loginContext";
 
 import { useCategoryContext } from "../../context/categoryContext";
 
@@ -55,6 +56,7 @@ const exercise = [
 ];
 
 const WorkoutCard = ({ exercise, navigation }) => {
+  const { userData } = useAuth();
   const { setExerciseData } = useExerciseContext();
   const handleExercise = (exercise) => {
     setExerciseData(exercise);
@@ -146,7 +148,7 @@ const WorkoutsExerciseList = ({ navigation }) => {
   }, []); // Empty dependency array means this effect runs once after the initial render
 
   const person = {
-    name: "Lucian",
+    name: userData.name ? userData.name : "Guest",
     daysOfWeek: [
       { name: "Sun", size: 24 },
       { name: "Mon", size: 35 },

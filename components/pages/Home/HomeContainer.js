@@ -8,10 +8,13 @@ import fullBody from "../../public/fullBody.png";
 import intenseJumping from "../../public/intenseJumping.png";
 import strengthBand from "../../public/strengthBand.png";
 import totalBody from "../../public/totalBody.png";
+import { useAuth } from "../../context/loginContext";
 
 const HomeContainer = () => {
+  const { userData } = useAuth();
+
   const person = {
-    name: "Lucian",
+    name: userData.name ? userData.name : "Guest",
     daysOfWeek: [
       { name: "Sun", size: 24 },
       { name: "Mon", size: 35 },

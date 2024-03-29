@@ -6,8 +6,10 @@ import { homeStyles } from "./homeStyle.js";
 import CaloriesIcon from "../../icons/caloriesIcon.js";
 import CaloriesDaysStat from "../../icons/caloriesDaysStat.js";
 import { ScrollView } from "react-native-gesture-handler";
+import { useAuth } from "../../context/loginContext.js";
 
 const HomePart1 = ({ person }) => {
+  const { userData } = useAuth();
   const [welcomePart, setWelcomePart] = useState();
 
   const now = new Date();
