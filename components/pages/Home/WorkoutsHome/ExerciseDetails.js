@@ -260,7 +260,7 @@ const ExercisePreview = () => {
           <View style={{ flexDirection: "row", alignItems: "center" }}>
             <Text
               style={{
-                fontWeight: "600",
+                fontWeight: 600,
                 fontSize: 20,
                 color: "#FFFFFF",
                 marginRight: 8, // Add some space between text and SVG if needed

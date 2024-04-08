@@ -41,7 +41,7 @@ const HomePart1 = ({ person }) => {
       <Text style={homeStyles.home_1.date}>{formattedDate}</Text>
       <Text
         style={homeStyles.home_1.welcome}
-      >{`${welcomePart}, ${person.name}!`}</Text>
+      >{`${welcomePart}, '${person.name}'!`}</Text>
       <View
         style={{
           backgroundColor: "#24262b",
@@ -80,9 +80,9 @@ const HomePart1 = ({ person }) => {
             justifyContent: "space-around",
           }}
         >
-          {person.daysOfWeek.map((day) => {
+          {person.daysOfWeek.map((day, index) => {
             return (
-              <View>
+              <View key={index}>
                 <View style={{ display: "flex", justifyContent: "flex-end" }}>
                   {handleIsActive(day.name) ? (
                     <CaloriesDaysStat size={day.size} isActive={true} />

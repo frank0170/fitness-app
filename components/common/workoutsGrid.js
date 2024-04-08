@@ -197,7 +197,6 @@ const WorkoutsGrid = ({
                 color: "white",
                 fontSize: 16,
                 fontStyle: "normal",
-                fontWeight: 500,
               }}
             >
               See available workouts
@@ -215,7 +214,6 @@ const WorkoutsGrid = ({
                 color: "white",
                 fontSize: 16,
                 fontStyle: "normal",
-                fontWeight: 500,
               }}
             >
               See available workouts

@@ -32,6 +32,8 @@ const AppNavigation = () => {
     <NavigationContainer>
       <Tab.Navigator
         screenOptions={({ route }) => ({
+          tabBarActiveTintColor: "#FF8036",
+          tabBarInactiveTintColor: "#6B7280",
           tabBarIcon: ({ focused, color, size }) => {
             let iconComponent;
 
@@ -54,10 +56,6 @@ const AppNavigation = () => {
             border: "1px solid #24262b",
           },
         })}
-        tabBarOptions={{
-          activeTintColor: "#FF8036",
-          inactiveTintColor: "#6B7280",
-        }}
       >
         {/* pus pt development */}
         <Tab.Screen name="Home" component={Home} />

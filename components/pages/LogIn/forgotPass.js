@@ -20,7 +20,7 @@ const forgotPass = () => {
         <Text
           style={{
             fontSize: 28,
-            fontWeight: "500",
+            fontWeight: 500,
             color: "#FFFFFF",
             left: "5%",
             top: "8%",
@@ -32,7 +32,7 @@ const forgotPass = () => {
         <Text
           style={{
             fontSize: 16,
-            fontWeight: "400",
+            fontWeight: 400,
             top: "10%",
             color: "#6B7280",
             left: "5%",
@@ -52,7 +52,7 @@ const forgotPass = () => {
               color: "#FFFFFF",
               left: "35%",
               fontSize: 18,
-              fontWeight: "500",
+              fontWeight: 500,
             }}
           >
             Send Code

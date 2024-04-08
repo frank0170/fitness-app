@@ -14,7 +14,7 @@ const HomeContainer = () => {
   const { userData } = useAuth();
 
   const person = {
-    name: userData.name ? userData.name : "Guest",
+    name: "Guest",
     daysOfWeek: [
       { name: "Sun", size: 24 },
       { name: "Mon", size: 35 },

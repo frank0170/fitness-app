@@ -23,7 +23,7 @@ const mailSignIn = () => {
             left: "5%",
             top: "10%",
             fontSize: 28,
-            fontWeight: "500",
+            fontWeight: 500,
             color: "#FFFFFF",
           }}
         >
@@ -35,7 +35,7 @@ const mailSignIn = () => {
             left: "5%",
             color: "#6B7280",
             fontSize: 16,
-            fontWeight: "400",
+            fontWeight: 400,
             top: "12%",
           }}
         >
@@ -58,7 +58,7 @@ const mailSignIn = () => {
               alignSelf: "center",
               left: "26%",
               fontSize: 18,
-              fontWeight: "500",
+              fontWeight: 500,
             }}
           >
             Sign up with Apple
@@ -82,7 +82,7 @@ const mailSignIn = () => {
               alignSelf: "center",
               left: "26%",
               fontSize: 18,
-              fontWeight: "500",
+              fontWeight: 500,
             }}
           >
             Sign up with Google
@@ -94,7 +94,7 @@ const mailSignIn = () => {
             source={line}
             style={{ height: "1px", alignSelf: "center", width: "81px" }}
           />
-          <Text style={{ color: "#6B7280", fontSize: 14, fontWeight: "400" }}>
+          <Text style={{ color: "#6B7280", fontSize: 14, fontWeight: 400 }}>
             Or sign in with email
           </Text>
           <Image
@@ -115,8 +115,8 @@ const mailSignIn = () => {
           <Text
             style={{
               color: "#FFFFFF",
-              fontSize: "18px",
-              fontWeight: "500",
+              fontSize: 18,
+              fontWeight: 500,
               left: "40%",
             }}
           >
@@ -125,13 +125,13 @@ const mailSignIn = () => {
         </TouchableOpacity>
 
         <TouchableOpacity style={{ top: "20%", left: "35%" }}>
-          <Text style={{ color: "#FF8036", fontSize: 16, fontWeight: "400" }}>
+          <Text style={{ color: "#FF8036", fontSize: 16 }}>
             Forgot Password?
           </Text>
         </TouchableOpacity>
 
         <TouchableOpacity style={{ top: "32%", left: "20%" }}>
-          <Text style={{ color: "#FFFFFF", fontSize: 16, fontWeight: "400" }}>
+          <Text style={{ color: "#FFFFFF", fontSize: 16, fontWeight: 400 }}>
             Already have an account?
             <Text style={{ color: "#FF8036" }}> Sign In</Text>
           </Text>

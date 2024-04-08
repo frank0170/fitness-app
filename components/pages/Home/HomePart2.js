@@ -48,7 +48,7 @@ const HomePart2 = ({ person, sampleData }) => {
     },
     text: {
       fontSize: 18,
-      fontWeight: "bold",
+      fontWeight: 700,
     },
   });
 
@@ -85,9 +85,9 @@ const HomePart2 = ({ person, sampleData }) => {
         showsHorizontalScrollIndicator={false}
         showsVerticalScrollIndicator={false}
       >
-        {sampleData.cards.map((item) => (
+        {sampleData.cards.map((item, index) => (
           <FitnessCard
-            key={item.id} // Don't forget to add a unique key prop for each item
+            key={index} // Don't forget to add a unique key prop for each item
             image={item.image}
             title={item.title}
             category={item.category}

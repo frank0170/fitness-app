@@ -117,9 +117,9 @@ const HomePart2 = ({ person, sampleData }) => {
         showsVerticalScrollIndicator={false}
         style={{ marginBottom: 24 }}
       >
-        {sampleData.workouts.map((item) => (
+        {sampleData.workouts.map((item, index) => (
           <WorkoutCard
-            key={item.id} // Don't forget to add a unique key prop for each item
+            key={item.index} // Don't forget to add a unique key prop for each item
             image={item.image}
             name={item.name}
             kcal={item.kcal}

@@ -156,7 +156,7 @@ const WorkoutsExerciseList = ({ navigation }) => {
   }, []); // Empty dependency array means this effect runs once after the initial render
 
   const person = {
-    name: userData.name ? userData.name : "Guest",
+    name: "Guest",
     daysOfWeek: [
       { name: "Sun", size: 24 },
       { name: "Mon", size: 35 },

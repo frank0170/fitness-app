@@ -96,7 +96,7 @@ const CreateAccount = ({ navigation }) => {
           >
             <Image source={closeButton} style={{ height: 14, width: 14 }} />
           </TouchableOpacity>
-          <Text style={{ fontSize: 17, fontWeight: "600", color: "#FFFFFF" }}>
+          <Text style={{ fontSize: 17, fontWeight: 600, color: "#FFFFFF" }}>
             Create an Account
           </Text>
         </View>
@@ -108,9 +108,7 @@ const CreateAccount = ({ navigation }) => {
                 source={appleIcon}
                 style={{ marginRight: 10, height: 18, width: 18 }}
               />
-              <Text
-                style={{ color: "#FFFFFF", fontSize: 18, fontWeight: "500" }}
-              >
+              <Text style={{ color: "#FFFFFF", fontSize: 18, fontWeight: 500 }}>
                 Sign up with Apple
               </Text>
             </View>
@@ -122,9 +120,7 @@ const CreateAccount = ({ navigation }) => {
                 source={googleIcon}
                 style={{ marginRight: 10, height: 18, width: 18 }}
               />
-              <Text
-                style={{ color: "#FFFFFF", fontSize: 18, fontWeight: "500" }}
-              >
+              <Text style={{ color: "#FFFFFF", fontSize: 18, fontWeight: 500 }}>
                 Sign up with Google
               </Text>
             </View>
@@ -146,7 +142,7 @@ const CreateAccount = ({ navigation }) => {
             style={{
               color: "#6B7280",
               fontSize: 14,
-              fontWeight: "400",
+              fontWeight: 400,
               marginHorizontal: 8,
             }}
           >
@@ -185,9 +181,7 @@ const CreateAccount = ({ navigation }) => {
               style={[LogInStyles.inputBoxSignUp]}
               onPress={validatePasswords}
             >
-              <Text
-                style={{ color: "#FFFFFF", fontSize: 18, fontWeight: "500" }}
-              >
+              <Text style={{ color: "#FFFFFF", fontSize: 18, fontWeight: 500 }}>
                 Sign up
               </Text>
             </TouchableOpacity>
@@ -204,7 +198,7 @@ const CreateAccount = ({ navigation }) => {
               style={{
                 color: "#FFFFFF",
                 fontSize: 16,
-                fontWeight: "400",
+                fontWeight: 400,
                 marginTop: 20,
               }}
             >
