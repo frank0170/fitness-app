@@ -12,7 +12,10 @@ const WorkoutsStack = createNativeStackNavigator();
 const WorkoutsScreen = () => {
   return (
     <WorkoutsStack.Navigator screenOptions={{ headerShown: false }}>
-      <WorkoutsStack.Screen name="MainPage" component={WorkoutsMainPage} />
+      <WorkoutsStack.Screen
+        name="MainPageRandom"
+        component={WorkoutsMainPage}
+      />
       <WorkoutsStack.Screen
         name="ExerciseListRandom"
         component={WorkoutsExerciseList}
