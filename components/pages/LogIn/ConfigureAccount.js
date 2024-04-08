@@ -96,7 +96,7 @@ const ConfigureAccount = ({ navigation }) => {
             paddingHorizontal: 16,
           }}
         >
-          <Text style={{ fontSize: 17, fontWeight: 600, color: "#FFFFFF" }}>
+          <Text style={{ fontSize: 17, fontWeight: "bold", color: "#FFFFFF" }}>
             Configure your Account
           </Text>
         </View>
@@ -118,7 +118,7 @@ const ConfigureAccount = ({ navigation }) => {
                 style={{
                   color: "#6B7280",
                   fontSize: 14,
-                  fontWeight: 400,
+
                   marginHorizontal: 8,
                 }}
               >
@@ -200,7 +200,9 @@ const ConfigureAccount = ({ navigation }) => {
               style={[LogInStyles.inputBoxSignUp]}
               onPress={handleSetUp}
             >
-              <Text style={{ color: "#FFFFFF", fontSize: 18, fontWeight: 500 }}>
+              <Text
+                style={{ color: "#FFFFFF", fontSize: 18, fontWeight: "medium" }}
+              >
                 Set up my Account
               </Text>
             </TouchableOpacity>

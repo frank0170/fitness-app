@@ -36,7 +36,7 @@ const ExercisePreview = () => {
 
               <Text
                 style={{
-                  fontWeight: 700,
+                  fontWeight: "bold",
                   fontSize: 36,
                   alignSelf: "center",
                   color: "#FFFFFF",
@@ -46,7 +46,6 @@ const ExercisePreview = () => {
               </Text>
               <Text
                 style={{
-                  fontWeight: 500,
                   fontSize: 18,
                   alignSelf: "center",
                   color: "#FFFFFF",

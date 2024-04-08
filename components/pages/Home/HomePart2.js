@@ -48,7 +48,7 @@ const HomePart2 = ({ person, sampleData }) => {
     },
     text: {
       fontSize: 18,
-      fontWeight: 700,
+      fontWeight: "bold",
     },
   });
 

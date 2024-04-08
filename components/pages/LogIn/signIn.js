@@ -89,7 +89,7 @@ const styles = StyleSheet.create({
   },
   headerTitle: {
     fontSize: 30,
-    fontWeight: 500,
+
     alignSelf: "center",
     color: "#FFFFFF",
   },
@@ -99,7 +99,7 @@ const styles = StyleSheet.create({
   },
   subtitle: {
     fontSize: 16,
-    fontWeight: 400,
+
     color: "#6B7280",
     alignSelf: "center",
     marginTop: 15,
@@ -121,7 +121,7 @@ const styles = StyleSheet.create({
   buttonText: {
     color: "#FFFFFF",
     fontSize: 18,
-    fontWeight: 500,
+
     textAlign: "center",
     flex: 1,
   },

@@ -3,8 +3,8 @@ import { NavigationContainer } from "@react-navigation/native";
 import { createNativeStackNavigator } from "@react-navigation/native-stack";
 import { useAuth } from "../../context/loginContext";
 
-import CreateAccount from "./CreateAccount.js";
-import SignIn from "./SignIn";
+import CreateAccount from "./createAccount.js";
+import SignIn from "./signIn";
 import ConfigureAccount from "./ConfigureAccount.js";
 import Profile from "./ProfilePage";
 import LogIn from "./LogIn";

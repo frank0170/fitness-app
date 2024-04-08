@@ -17,7 +17,7 @@ const gender = () => {
           <Text
             style={{
               fontSize: 16,
-              fontWeight: 500,
+
               color: "#FFFFFF",
               left: "35%",
               alignSelf: "center",
@@ -29,7 +29,6 @@ const gender = () => {
 
         <Text
           style={{
-            fontWeight: 500,
             fontSize: 30,
             color: "#FFFFFF",
             top: "12%",
@@ -54,7 +53,7 @@ const gender = () => {
           ]}
         >
           <View style={{ left: "30%", flexDirection: "row" }}>
-            <Text style={{ fontSize: 18, fontWeight: 400, color: "#FF8036" }}>
+            <Text style={{ fontSize: 18, color: "#FF8036" }}>
               Prefer to skip
             </Text>
             <Image source={closeButton} style={{ alignSelf: "center" }} />
@@ -63,7 +62,7 @@ const gender = () => {
 
         <TouchableOpacity style={[LogInStyles.whiteBox, { top: "60%" }]}>
           <View style={{ left: "35%", flexDirection: "row" }}>
-            <Text style={{ fontSize: 18, fontWeight: 500 }}>Continue</Text>
+            <Text style={{ fontSize: 18, fontWeight: "medium" }}>Continue</Text>
           </View>
         </TouchableOpacity>
       </View>

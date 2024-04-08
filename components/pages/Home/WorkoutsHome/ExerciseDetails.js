@@ -137,7 +137,6 @@ const ExercisePreview = () => {
           >
             <Text
               style={{
-                fontWeight: 500,
                 fontSize: 18,
                 alignSelf: "center",
                 color: "#FFFFFF",
@@ -147,7 +146,7 @@ const ExercisePreview = () => {
             </Text>
             <Text
               style={{
-                fontWeight: 700,
+                fontWeight: "bold",
                 fontSize: 36,
                 alignSelf: "center",
                 color: "#FFFFFF",
@@ -157,7 +156,6 @@ const ExercisePreview = () => {
             </Text>
             <Text
               style={{
-                fontWeight: 500,
                 fontSize: 18,
                 alignSelf: "center",
                 color: "#FFFFFF",
@@ -186,7 +184,6 @@ const ExercisePreview = () => {
             alignSelf: "center",
 
             textAlign: "center",
-            fontWeight: 300,
           }}
         >
           {exercise?.description}
@@ -260,7 +257,7 @@ const ExercisePreview = () => {
           <View style={{ flexDirection: "row", alignItems: "center" }}>
             <Text
               style={{
-                fontWeight: 600,
+                fontWeight: "bold",
                 fontSize: 20,
                 color: "#FFFFFF",
                 marginRight: 8, // Add some space between text and SVG if needed

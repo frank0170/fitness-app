@@ -108,7 +108,7 @@ const ExercisePreview = ({ navigation }) => {
           >
             <Text
               style={{
-                fontWeight: 700,
+                fontWeight: "bold",
                 fontSize: 36,
                 alignSelf: "center",
                 color: "#FFFFFF",
@@ -118,7 +118,6 @@ const ExercisePreview = ({ navigation }) => {
             </Text>
             <Text
               style={{
-                fontWeight: 500,
                 fontSize: 18,
                 alignSelf: "center",
                 color: "#FFFFFF",
@@ -147,7 +146,6 @@ const ExercisePreview = ({ navigation }) => {
             alignSelf: "center",
             height: "30%",
             textAlign: "center",
-            fontWeight: 300,
           }}
         >
           {exercise?.description}

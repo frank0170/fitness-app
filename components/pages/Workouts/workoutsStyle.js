@@ -5,7 +5,7 @@ export const workoutsStyle = StyleSheet.create({
     textAlign: "center",
     fontSize: 30,
     fontStyle: "normal",
-    fontWeight: 700,
+    fontWeight: "bold",
     lineHeight: 38,
     letterSpacing: -0.3,
     color: "#FFF",
@@ -15,7 +15,7 @@ export const workoutsStyle = StyleSheet.create({
     textAlign: "center",
     fontSize: 16,
     fontStyle: "normal",
-    fontWeight: 400,
+
     // lineHeight: "160%",
     letterSpacing: -0.04,
     color: "#D7D8D9",
@@ -29,7 +29,7 @@ export const workoutsStyle = StyleSheet.create({
     left: 24,
     fontSize: 20,
     fontStyle: "normal",
-    fontWeight: 600,
+    fontWeight: "bold",
     lineHeight: 25.6,
     letterSpacing: -0.04,
     color: "#FFF",
@@ -62,7 +62,7 @@ export const workoutsStyle = StyleSheet.create({
     textAlign: "center",
     fontSize: 16,
     fontStyle: "normal",
-    fontWeight: 500,
+
     // lineHeight: "160%",
     letterSpacing: -0.04,
     color: "#FFF",
@@ -109,7 +109,7 @@ export const workoutsStyle = StyleSheet.create({
     textAlign: "justify",
     fontSize: 16,
     fontStyle: "normal",
-    fontWeight: 500,
+
     lineHeight: 20,
     letterSpacing: -0.04,
     color: "#9EA0A5",
@@ -119,7 +119,7 @@ export const workoutsStyle = StyleSheet.create({
     textAlign: "justify",
     fontSize: 16,
     fontStyle: "normal",
-    fontWeight: 600,
+    fontWeight: "bold",
     lineHeight: 25,
     letterSpacing: -0.048,
     color: "#FFF",
@@ -129,7 +129,7 @@ export const workoutsStyle = StyleSheet.create({
     textAlign: "justify",
     fontSize: 16,
     fontStyle: "normal",
-    fontWeight: 500,
+
     lineHeight: 20,
     letterSpacing: -0.04,
 
@@ -141,7 +141,7 @@ export const workoutsStyle = StyleSheet.create({
     textAlign: "justify",
     fontSize: 16,
     fontStyle: "normal",
-    fontWeight: 500,
+
     lineHeight: 20,
     letterSpacing: -0.04,
 
@@ -151,7 +151,7 @@ export const workoutsStyle = StyleSheet.create({
     textAlign: "justify",
     fontSize: 12,
     fontStyle: "normal",
-    fontWeight: 500,
+
     lineHeight: 20,
     letterSpacing: -0.04,
     alignItems: "center",

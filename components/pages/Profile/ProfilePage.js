@@ -26,27 +26,27 @@ import ProBox from "../../icons/ProBox.js";
 
 const EditPhotoBox = () => {
   <View style={{ backgroundColor: "#24262B", width: 326, height: 335 }}>
-    <Text style={{ color: "#FFFFFF", fontSize: 20, fontWeight: 600 }}>
+    <Text style={{ color: "#FFFFFF", fontSize: 20, fontWeight: "bold" }}>
       Change Your Picture
     </Text>
 
     <TouchableOpacity>
       <PhotoCamera />
-      <Text style={{ color: "#FFFFFF", fontSize: 18, fontWeight: 400 }}>
+      <Text style={{ color: "#FFFFFF", fontSize: 18, fontWeight: "medium" }}>
         Take a photo
       </Text>
     </TouchableOpacity>
 
     <TouchableOpacity></TouchableOpacity>
     <Folder />
-    <Text style={{ color: "#FFFFFF", fontSize: 18, fontWeight: 400 }}>
+    <Text style={{ color: "#FFFFFF", fontSize: 18, fontWeight: "medium" }}>
       Choose from your file
     </Text>
     <TouchableOpacity></TouchableOpacity>
 
     <TouchableOpacity></TouchableOpacity>
     <DeleteRed />
-    <Text style={{ color: "#E53935", fontSize: 18, fontWeight: 400 }}>
+    <Text style={{ color: "#E53935", fontSize: 18, fontWeight: "medium" }}>
       Delete photo
     </Text>
     <TouchableOpacity></TouchableOpacity>
@@ -90,7 +90,7 @@ const Profile = () => {
             style={{
               color: "#FFFFFF",
               fontSize: 20,
-              fontWeight: 600,
+              fontWeight: "bold",
               left: "35%",
             }}
           >
@@ -125,7 +125,7 @@ const Profile = () => {
       <Text
         style={{
           fontSize: 20,
-          fontWeight: 600,
+          fontWeight: "bold",
           color: "#FFFFFF",
           left: "30%",
           top: "-10%",
@@ -136,7 +136,7 @@ const Profile = () => {
       <Text
         style={{
           fontSize: 11,
-          fontWeight: 400,
+
           color: "#AAAAAA",
           left: "45%",
           top: "-10%",
@@ -162,7 +162,7 @@ const Profile = () => {
               style={{
                 color: "#FFFFFF",
                 fontSize: 11,
-                fontWeight: 500,
+
                 left: "10%",
               }}
             >
@@ -192,7 +192,7 @@ const Profile = () => {
               style={{
                 color: "#FFFFFF",
                 fontSize: 11,
-                fontWeight: 500,
+
                 left: "10%",
               }}
             >
@@ -222,7 +222,7 @@ const Profile = () => {
               style={{
                 color: "#FFFFFF",
                 fontSize: 11,
-                fontWeight: 500,
+
                 left: "10%",
               }}
             >
@@ -259,7 +259,7 @@ const Profile = () => {
               style={{
                 color: "#FFFFFF",
                 fontSize: 16,
-                fontWeight: 600,
+                fontWeight: "bold",
                 left: "5%",
               }}
             >
@@ -270,7 +270,7 @@ const Profile = () => {
             style={{
               color: "#FFFFFF",
               fontSize: 10,
-              fontWeight: 400,
+
               top: "5%",
             }}
           >
@@ -286,7 +286,7 @@ const Profile = () => {
         ]}
       >
         <EditProfile style={{ paddingLeft: 17, paddingRight: 17 }} />
-        <Text style={{ color: "#FFFFFF", fontSize: 14, fontWeight: 500 }}>
+        <Text style={{ color: "#FFFFFF", fontSize: 14, fontWeight: "medium" }}>
           Edit Profile
         </Text>
         <View style={{ right: "-49%" }}>
@@ -301,7 +301,7 @@ const Profile = () => {
         ]}
       >
         <SubIcon style={{ paddingLeft: 17, paddingRight: 17 }} />
-        <Text style={{ color: "#FFFFFF", fontSize: 14, fontWeight: 500 }}>
+        <Text style={{ color: "#FFFFFF", fontSize: 14, fontWeight: "medium" }}>
           My Subscription
         </Text>
         <View style={{ right: "-38%" }}>
@@ -316,7 +316,7 @@ const Profile = () => {
         ]}
       >
         <Subscription style={{ paddingLeft: 17, paddingRight: 17 }} />
-        <Text style={{ color: "#FFFFFF", fontSize: 14, fontWeight: 500 }}>
+        <Text style={{ color: "#FFFFFF", fontSize: 14, fontWeight: "medium" }}>
           Payment Methods
         </Text>
         <View style={{ right: "-34%" }}>
@@ -331,7 +331,7 @@ const Profile = () => {
         ]}
       >
         <InviteFriends style={{ paddingLeft: 17, paddingRight: 17 }} />
-        <Text style={{ color: "#FFFFFF", fontSize: 14, fontWeight: 500 }}>
+        <Text style={{ color: "#FFFFFF", fontSize: 14, fontWeight: "medium" }}>
           Invite Friends
         </Text>
         <View style={{ right: "-43%" }}>
@@ -346,7 +346,7 @@ const Profile = () => {
         ]}
       >
         <AboutIcon style={{ paddingLeft: 17, paddingRight: 17 }} />
-        <Text style={{ color: "#FFFFFF", fontSize: 14, fontWeight: 500 }}>
+        <Text style={{ color: "#FFFFFF", fontSize: 14, fontWeight: "medium" }}>
           About Us
         </Text>
         <View style={{ right: "-52%" }}>
@@ -361,7 +361,7 @@ const Profile = () => {
         ]}
       >
         <TermsIcon style={{ paddingLeft: 17, paddingRight: 17 }} />
-        <Text style={{ color: "#FFFFFF", fontSize: 14, fontWeight: 500 }}>
+        <Text style={{ color: "#FFFFFF", fontSize: 14, fontWeight: "medium" }}>
           Terms and Conditions
         </Text>
         <View style={{ right: "-27%" }}>
@@ -386,7 +386,7 @@ const Profile = () => {
             paddingTop: 16,
             color: "#111214",
             fontSize: 14,
-            fontWeight: 600,
+            fontWeight: "bold",
           }}
         >
           Log Out

@@ -132,7 +132,7 @@ const CreateAccount = ({ navigation }) => {
             <Text
               style={{
                 fontSize: 28,
-                fontWeight: 500,
+
                 color: "#FFFFFF",
                 left: 12,
                 marginTop: 24,
@@ -144,7 +144,7 @@ const CreateAccount = ({ navigation }) => {
               style={{
                 color: "#6B7280",
                 fontSize: 14,
-                fontWeight: 400,
+
                 marginHorizontal: 12,
                 marginTop: 12,
               }}
@@ -162,7 +162,9 @@ const CreateAccount = ({ navigation }) => {
                 source={appleIcon}
                 style={{ marginRight: 10, height: 18, width: 18 }}
               />
-              <Text style={{ color: "#FFFFFF", fontSize: 18, fontWeight: 500 }}>
+              <Text
+                style={{ color: "#FFFFFF", fontSize: 18, fontWeight: "medium" }}
+              >
                 Sign in with Apple
               </Text>
             </View>
@@ -174,7 +176,9 @@ const CreateAccount = ({ navigation }) => {
                 source={googleIcon}
                 style={{ marginRight: 10, height: 18, width: 18 }}
               />
-              <Text style={{ color: "#FFFFFF", fontSize: 18, fontWeight: 500 }}>
+              <Text
+                style={{ color: "#FFFFFF", fontSize: 18, fontWeight: "medium" }}
+              >
                 Sign in with Google
               </Text>
             </View>
@@ -196,7 +200,7 @@ const CreateAccount = ({ navigation }) => {
             style={{
               color: "#6B7280",
               fontSize: 14,
-              fontWeight: 400,
+
               marginHorizontal: 8,
             }}
           >
@@ -230,7 +234,9 @@ const CreateAccount = ({ navigation }) => {
               style={[LogInStyles.inputBoxSignUp]}
               onPress={handleLoginClick}
             >
-              <Text style={{ color: "#FFFFFF", fontSize: 18, fontWeight: 500 }}>
+              <Text
+                style={{ color: "#FFFFFF", fontSize: 18, fontWeight: "medium" }}
+              >
                 Sign in
               </Text>
             </TouchableOpacity>
@@ -247,7 +253,6 @@ const CreateAccount = ({ navigation }) => {
               style={{
                 color: "#FFFFFF",
                 fontSize: 16,
-                fontWeight: 400,
               }}
             >
               <TouchableOpacity style={{ color: "#FF8036", marginLeft: 8 }}>

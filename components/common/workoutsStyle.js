@@ -5,7 +5,7 @@ export const workoutsStyle = StyleSheet.create({
     textAlign: "center",
     fontSize: 30,
     fontStyle: "normal",
-    fontWeight: 700,
+    fontWeight: "bold",
     lineHeight: 38,
     letterSpacing: 0.3,
     color: "#FFF",
@@ -15,7 +15,7 @@ export const workoutsStyle = StyleSheet.create({
     textAlign: "center",
     fontSize: 16,
     fontStyle: "normal",
-    fontWeight: 400,
+
     // lineHeight: "160%",
     letterSpacing: -0.4,
     color: "#D7D8D9",
@@ -61,7 +61,7 @@ export const workoutsStyle = StyleSheet.create({
     textAlign: "center",
     fontSize: 16,
     fontStyle: "normal",
-    fontWeight: 500,
+
     // lineHeight: "160%",
     letterSpacing: -0.4,
     color: "#FFF",
@@ -71,7 +71,7 @@ export const workoutsStyle = StyleSheet.create({
     textAlign: "center",
     fontSize: 16,
     fontStyle: "normal",
-    fontWeight: 500,
+
     // lineHeight: "160%",
     letterSpacing: -0.4,
     color: "#c9c9c9",
