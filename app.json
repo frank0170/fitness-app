@@ -10,6 +10,12 @@
       "eas": {
         "projectId": "e288bd2f-e388-4ac6-b59b-0fcbf60ddbd6"
       }
+    },
+    "android": {
+      "package": "com.frankblockarch.fitnessappprod"
+    },
+    "ios": {
+      "bundleIdentifier": "com.frankblockarch.fitnessappprod"
     }
   },
   "name": "fitness-app-prod"

@@ -1,4 +1,4 @@
-package com.fitnessappprod;
+package com.frankblockarch.fitnessappprod;
 
 import android.os.Build;
 import android.os.Bundle;
