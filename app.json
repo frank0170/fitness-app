@@ -3,6 +3,7 @@
     "name": "fitness-app-prod",
     "slug": "fitness-app-prod",
     "version": "1.0.0",
+    "icon": "./assets/images/icon.png",
     "assetBundlePatterns": [
       "**/*"
     ],

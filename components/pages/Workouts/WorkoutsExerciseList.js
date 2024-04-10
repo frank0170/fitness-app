@@ -188,7 +188,11 @@ const WorkoutsExerciseList = ({ navigation }) => {
         <Text style={workoutsStyle.text}>Your selected type exercises</Text>
         <View style={{ marginBottom: 24 }} key={exercisesList}>
           {exercisesList.map((exercise) => (
-            <WorkoutCard exercise={exercise} navigation={navigation} />
+            <WorkoutCard
+              key={exercise.exercise + exercise.subCategory}
+              exercise={exercise}
+              navigation={navigation}
+            />
           ))}
         </View>
       </ScrollView>

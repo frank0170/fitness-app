@@ -87,7 +87,7 @@ const HomePart2 = ({ person, sampleData }) => {
       >
         {sampleData.cards.map((item, index) => (
           <FitnessCard
-            key={index} // Don't forget to add a unique key prop for each item
+            key={index + item.title} // Don't forget to add a unique key prop for each item
             image={item.image}
             title={item.title}
             category={item.category}
