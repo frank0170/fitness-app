@@ -2,7 +2,7 @@
   "expo": {
     "name": "ShapeMentor",
     "slug": "fitness-app-prod",
-        "version": "1.0.7",
+        "version": "1.0.8",
     "orientation": "portrait",
     "icon": "./assets/icon.png",
     "userInterfaceStyle": "light",
@@ -26,11 +26,11 @@
     },
     "android": {
       "adaptiveIcon": {
-        "foregroundImage": "./assets/adaptive-icon.png",
+        "foregroundImage": "./assets/icon.png",
         "backgroundColor": "#ffffff"
       },
       "package": "com.fitnessappprod",
-      "versionCode": 17
+      "versionCode": 18
 
     },
     "web": {
