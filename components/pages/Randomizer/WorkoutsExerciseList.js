@@ -1,5 +1,5 @@
 import React, { useEffect } from "react";
-import { Image, Text, TouchableOpacity, View } from "react-native";
+import { Image, Text, View } from "react-native";
 import playButton from "../../public/playButton.png";
 import timeClock from "../../public/timeClock.png";
 import HomePart1 from "../Home/HomePart1.js";
@@ -12,6 +12,7 @@ import { SafeAreaView } from "react-native-safe-area-context";
 import { ScrollView } from "react-native-gesture-handler";
 import { useExerciseContext } from "../../context/exerciseContext";
 import { useAuth } from "../../context/loginContext";
+import { TouchableOpacity } from "react-native-gesture-handler";
 
 import { useCategoryContext } from "../../context/categoryContext";
 

@@ -1,5 +1,5 @@
 import React from "react";
-import { Image, Text, TouchableOpacity, View, TextInput } from "react-native";
+import { Image, Text, View, TextInput } from "react-native";
 import appleIcon from "../../public/appleIcon.png";
 import closeButton from "../../public/closeButton.png";
 import googleIcon from "../../public/googleIcon.png";
@@ -8,6 +8,7 @@ import { LogInStyles } from "./loginStyles";
 import { useAuth } from "../../context/loginContext";
 import { useSignupContext } from "../../context/signupContext";
 import md5 from "md5";
+import { TouchableOpacity } from "react-native-gesture-handler";
 
 const ConfigureAccount = ({ navigation }) => {
   const { logIn, userData } = useAuth();

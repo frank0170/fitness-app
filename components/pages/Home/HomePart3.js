@@ -2,7 +2,6 @@ import React, { useState } from "react";
 import {
   Text,
   View,
-  TouchableOpacity,
   ImageBackground,
   ScrollView,
   StyleSheet,
@@ -11,6 +10,7 @@ import "./homeStyle.js";
 import { homeStyles } from "./homeStyle.js";
 import CaloriesIconSmall from "../../icons/caloriesIconSmall.js";
 import TimeSmallIcon from "../../icons/timeSmallIcon.js";
+import { TouchableOpacity } from "react-native-gesture-handler";
 
 const WorkoutCard = ({ image, name, kcal, time }) => {
   const cardStyle = homeStyles.home_3.workoutCard.card;

@@ -1,5 +1,5 @@
 import React from "react";
-import { Image, Text, TouchableOpacity, View } from "react-native";
+import { Image, Text, View } from "react-native";
 import { ImageBackground } from "react-native";
 import playButtonTrans from "../../public/playButton.png";
 import { LogInStyles } from "../LogIn/loginStyles";
@@ -9,6 +9,7 @@ import back from "../../public/back.png";
 import StopWatch from "../../icons/stopWatch";
 import PlayButton from "../../icons/playButtonBig";
 import { workoutsStyle } from "./workoutsStyle.js";
+import { TouchableOpacity } from "react-native-gesture-handler";
 
 import { StyleSheet } from "react-native";
 import { Video, ResizeMode } from "expo-av";

@@ -2,13 +2,13 @@ import React, { useState, useEffect } from "react";
 import {
   Text,
   View,
-  TouchableOpacity,
   ImageBackground,
   ScrollView,
   StyleSheet,
 } from "react-native";
 import "./homeStyle.js";
 import { homeStyles } from "./homeStyle.js";
+import { TouchableOpacity } from "react-native-gesture-handler";
 
 const FitnessCard = ({ image, title, category, link, all }) => {
   const cardStyle = all

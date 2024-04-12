@@ -1,8 +1,9 @@
 import React, { useState } from "react";
-import { Image, Text, TouchableOpacity, View } from "react-native";
+import { Image, Text, View } from "react-native";
 import { TextInput } from "react-native";
 import closeButton from "../../public/closeButton.png";
 import { LogInStyles } from "./loginStyles";
+import { TouchableOpacity } from "react-native-gesture-handler";
 
 const forgotPass = () => {
   return (

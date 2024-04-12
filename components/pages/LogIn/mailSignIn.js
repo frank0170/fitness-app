@@ -1,11 +1,12 @@
 import React from "react";
-import { Image, Text, TouchableOpacity, View } from "react-native";
+import { Image, Text, View } from "react-native";
 import { TextInput } from "react-native";
 import appleIcon from "../../public/appleIcon.png";
 import closeButton from "../../public/closeButton.png";
 import googleIcon from "../../public/googleIcon.png";
 import line from "../../public/line.png";
 import { LogInStyles } from "./loginStyles";
+import { TouchableOpacity } from "react-native-gesture-handler";
 
 const mailSignIn = () => {
   return (

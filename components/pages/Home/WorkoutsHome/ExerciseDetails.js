@@ -1,5 +1,5 @@
 import React from "react";
-import { Image, Text, TouchableOpacity, View } from "react-native";
+import { Image, Text, View } from "react-native";
 import { ImageBackground } from "react-native";
 import playButtonTrans from "../../../public/playButton.png";
 import { LogInStyles } from "../../LogIn/loginStyles";
@@ -11,6 +11,7 @@ import { workoutsStyle } from "./workoutsStyle.js";
 import { useExerciseContext } from "../../../context/exerciseContext";
 import timeClock from "../../../public/timeClock.png";
 import { ScrollView } from "react-native-gesture-handler";
+import { TouchableOpacity } from "react-native-gesture-handler";
 
 const WorkoutCard = ({ exercise, navigation }) => {
   const { exerciseData, setExerciseData } = useExerciseContext();

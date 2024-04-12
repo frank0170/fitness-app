@@ -1,7 +1,8 @@
 import React from "react";
-import { Image, Text, TouchableOpacity, View } from "react-native";
+import { Image, Text, View } from "react-native";
 import { TextInput } from "react-native";
 import { SafeAreaView } from "react-native-safe-area-context";
+import { TouchableOpacity } from "react-native-gesture-handler";
 
 import appleIcon from "../../public/appleIcon.png";
 import closeButton from "../../public/closeButton.png";

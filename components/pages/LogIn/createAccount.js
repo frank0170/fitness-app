@@ -1,5 +1,5 @@
 import React from "react";
-import { Image, Text, TouchableOpacity, View } from "react-native";
+import { Image, Text, View } from "react-native";
 import { TextInput } from "react-native";
 import { SafeAreaView } from "react-native-safe-area-context";
 import appleIcon from "../../public/appleIcon.png";
@@ -10,6 +10,7 @@ import { LogInStyles } from "./loginStyles";
 import { useAuth } from "../../context/loginContext";
 import { useSignupContext } from "../../context/signupContext";
 import md5 from "md5";
+import { TouchableOpacity } from "react-native-gesture-handler";
 
 const CreateAccount = ({ navigation }) => {
   const { logIn, userData } = useAuth();

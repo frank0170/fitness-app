@@ -1,5 +1,5 @@
 import React from "react";
-import { Image, Text, TouchableOpacity, View } from "react-native";
+import { Image, Text, View } from "react-native";
 import { ScrollView } from "react-native";
 import BackArrowIcon from "../../icons/BackArrowIcon.js";
 import SettingsButton from "../../icons/SettingsButton.js";
@@ -23,6 +23,7 @@ import Folder from "../../icons/Folder.js";
 import DeleteRed from "../../icons/DeleteRed.js";
 import EditPhoto from "../../icons/EditPhoto.js";
 import ProBox from "../../icons/ProBox.js";
+import { TouchableOpacity } from "react-native-gesture-handler";
 
 const EditPhotoBox = () => {
   <View style={{ backgroundColor: "#24262B", width: 326, height: 335 }}>

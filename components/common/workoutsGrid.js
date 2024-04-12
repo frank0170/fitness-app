@@ -1,5 +1,5 @@
 import React from "react";
-import { View, Text, TouchableOpacity, Button } from "react-native";
+import { View, Text, Button } from "react-native";
 import { workoutsStyle } from "./workoutsStyle.js";
 import {
   ChestIcon,
@@ -14,6 +14,7 @@ import {
   AbsIcon,
 } from "../icons/workoutGridIcons.js";
 import { useCategoryContext } from "../context/categoryContext.js";
+import { TouchableOpacity } from "react-native-gesture-handler";
 
 const WorkoutItem = ({
   icon,

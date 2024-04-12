@@ -3,7 +3,7 @@ import { Image, ImageBackground, Text, View } from "react-native";
 import { workoutsStyle } from "./workoutsStyle.js";
 import { ScrollView } from "react-native-gesture-handler";
 import HomePart1 from "../Home/HomePart1.js";
-import { TouchableOpacity } from "react-native";
+import { TouchableOpacity } from "react-native-gesture-handler";
 
 const WorkoutExerciseTab = ({ exercisesList }) => {
   const exampleExercise = exercisesList[0];

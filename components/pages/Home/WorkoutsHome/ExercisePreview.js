@@ -1,8 +1,9 @@
 import React from "react";
-import { Image, Text, TouchableOpacity, View } from "react-native";
+import { Image, Text, View } from "react-native";
 import { ImageBackground } from "react-native";
 import { useExerciseContext } from "../../../context/exerciseContext";
 import back from "../../../public/back.png";
+import { TouchableOpacity } from "react-native-gesture-handler";
 
 import { workoutsStyle } from "./workoutsStyle.js";
 

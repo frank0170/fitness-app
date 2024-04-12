@@ -1,11 +1,12 @@
 import React, { useEffect } from "react";
-import { Image, Text, TouchableOpacity, View, StyleSheet } from "react-native";
+import { Image, Text, View, StyleSheet } from "react-native";
 import { LogInStyles } from "./loginStyles";
 import col from "../../public/exPhoto/col2.png";
 import appleIcon from "../../public/appleIcon.png";
 import googleIcon from "../../public/googleIcon.png";
 import { ImageBackground } from "react-native";
 import Profile from "./ProfilePage";
+import { TouchableOpacity } from "react-native-gesture-handler";
 
 import { useAuth } from "../../context/loginContext";
 import { ScrollView } from "react-native";
